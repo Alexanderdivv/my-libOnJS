@@ -4,6 +4,31 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <b>Menampilkan Nama: <br></b>
+    <input type="number" id="jumlah">
+    <!-- <input type="submit" onclick="sequence()"> -->
+    <input type="submit" id="submitForm">
+
+    <!-- <script>
+        function sequence(){
+            var stop = Number(document.getElementById("jumlah").value)
+            console.log(stop)
+            for (let i = 0; i < stop; i++) {
+                document.write("Alexander Diva Bangun")
+                document.write("<br>")
+            }
+        }
+    </script> -->
+    <script>
+        var submit = document.getElementById("submitForm")
+        submit.addEventListener("click", ()=>{
+            var stop = Number(document.getElementById("jumlah").value)
+            for (let i = 0; i < stop; i++) {
+                document.write("Alexander Bangun")
+                document.write("<br>")
+            }
+            console.log(stop)
+        });
+    </script>
 </body>
 </html>
