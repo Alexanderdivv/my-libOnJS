@@ -45,9 +45,10 @@
         function changeColor(){
             //choose random number from array colors
             var colorIndex = parseInt(Math.random()*colors.length)
+
             //set Background to color index
             body.style.backgroundColor = colors[colorIndex]
-            var warna = colors[colorIndex]
+
             // var warna = changeColor()
             document.getElementById('colorC').innerHTML = "This is " + colors[colorIndex]
         }
