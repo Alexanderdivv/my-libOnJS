@@ -1,0 +1,165 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Number Guessing Game</title> 
+</head> 
+<style>
+    html {
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+    }
+    h1 {
+        background-color: #17A589 ;
+        color: #fff;
+        text-align: center;
+        width: 750px;
+    }
+    p {
+        font-size: 18px;
+        text-align: center;
+    }
+    body {
+        width: 100%;
+        max-width: 750px;
+        min-width: 480px;
+        margin: 0 auto; 
+    }
+
+    #wrapper {
+        box-sizing: border-box;
+        text-align: center;
+        width: 750px;
+        height: 400px;
+        background-color: #17A589;
+        color: #fff;
+        font-size: 25px;
+    }
+    
+    #submitguess {
+        background-color: yellow;
+        color: black;
+        width: 200px;
+        height: 50px;
+        border-radius: 25px;
+        font-size: 30px;
+        border-style: none;
+        margin-top: 50px;
+        /* margin-left: 75px; */
+    }
+
+    #guessField {
+        color: #000;
+        width: 550px;
+        height: 100px;
+        font-size: 30px;
+        border-style: none;
+        margin-top: 25px;
+        font-size: 45px;
+        /* margin-left: 50px; */
+        border: 5px solid #14727d;
+        text-align: center;
+    }
+
+    #guess {
+        font-size: 55px;
+        /* margin-left: 90px; */
+        margin-top: 120px;
+        color: #fff;
+    }
+
+    .resultCheck {
+        color: yellow;
+        padding: 7px;
+        font-size: 24px;
+}
+
+
+</style>
+<body> 
+    <h1>Guess The Number</h1> 
+    <p>We have selected a random number between 1 - 10.  
+    See if you can guess it.</p> 
+    <div id="wrapper">
+        <div class="form"> 
+            <label for="guessField" id="guesses">Enter a guess: </label> 
+            <input type = "number" id = "guessField" class = "guessField"> 
+            <input type = "submit" value = "Submit guess" 
+                class = "guessSubmit" id = "submitguess"> 
+        </div> 
+        <div class="resultParas">
+            <p >Guesses Remaining: <span class="lastResult">3</span></p>
+            <p >Result : <span class="resultCheck"></span></p>
+        </div>
+    </div>
+
+<script type = "text/javascript">
+    const numberInputed = document.querySelector('#guessField');
+    const guessSlot = document.querySelector('.lastResult'); 
+    const resultCheck = document.querySelector('.resultCheck');  
+    const p = document.createElement('p');  
+    //1. Set Variable  
+    //write the code here
+    var randomNumber = parseInt((Math.random()*6)+10);
+    var guessCount = 3;
+      
+    document.getElementById("submitguess").onclick = function(){ 
+        // 2. Event when Guess Submited
+        //write the code here
+        var guess = numberInputed.value;
+        validateGuess(guess);
+    }
+
+    function validateGuess(guess){
+        //3. Function to validate the guess
+        //write the code here
+        if(guess < 10){
+            alert(`Please enter a number grater than 9!`)
+        }
+        else if(guess > 15){
+            alert(`Please enter a number less than 16!`)
+        }
+        else if(guessCount === 0){
+            displayMessage("Game Over!!!");
+            endGame();
+        } 
+        else{
+            checkGuess(guess)
+        }
+    }
+    function checkGuess(guess){
+        //4. Function to check the Guess
+        //write the code here
+        if(guess == randomNumber){
+            displayMessage("Congratulations!!! you guessed it right")
+            endGame()
+        }
+
+        else if(guess > randomNumber){
+            displayMessage("Oops! try a smaller number")
+            guessCount--
+        }
+        else if(guess < randomNumber){
+            displayMessage("Oops! try a grater number")
+            guessCount--
+        }
+    }
+
+    function endGame(){
+        //5. Function to end the Game
+        //write the code here
+        numberInputed.value = " "
+        //disable button
+        document.getElementById("submitguess").setAttribute(`disabled`,'')
+    }
+
+    function displayMessage(message){
+        resultCheck.innerHTML = `<b>${message}</b>`
+        guessSlot.innerHTML = `${guessCount}  `;
+    }
+
+    
+</script> 
+</body> 
+</html>  

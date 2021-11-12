@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Learn Keyboard Event</title>
+    </head>
+
+    <style>
+        body{
+            text-align: center;
+        }
+    </style> 
+
+    <body>
+        <h2>Event in Javascript</h2>
+        <br>
+
+        <input type="text" id="field" placeholder="Type here"> 
+        <p id="status"></p> 
+
+        <img width="60%" src="img/keyboard.PNG" id="key">
+
+        <p>Game key: <br>
+            w for move up <br>
+            a for move left<br>
+            s for move down<br>
+            d for move right<br>
+            space for shoot the enemy</p>
+    </body>
+
+    <script> 
+       var key_pressed = document.getElementById('field');
+       var keyid = document.getElementById("key")
+
+       key_pressed.addEventListener('keydown', onkeyDown)
+       key_pressed.addEventListener('keyup', onkeyUp)
+       key_pressed.addEventListener('keypress', onkeyPress)
+
+       function onkeyPress(event){
+           if(event.code == "Space"){
+               document.getElementById("status").innerHTML = 'sprite shoot the enemy'
+               keyid.src = 'img/hitEnemy.PNG'
+           }
+       }
+
+       function onkeyDown (event){
+           if(event.key == "w" || event.key == "W"){
+               document.getElementById("status").innerHTML = 'sprite move up'
+               keyid.src = 'img/up.PNG'
+           }
+           else if(event.key == "s" || event.key == "S"){
+               document.getElementById("status").innerHTML = 'sprite move down';
+               key.src = 'img/down.PNG'
+           }
+           else if(event.key == "d" || event.key == "D"){
+               document.getElementById("status").innerHTML = 'sprite move right';
+               key.src = 'img/right.PNG'
+           }
+           else if(event.key == "a" || event.key == "A"){
+               document.getElementById("status").innerHTML = "sprite move left";
+               key.src = 'img/left.PNG' 
+           }
+           else{
+               document.getElementById("status").innerHTML = "sprite doesn't move";
+               key.src = 'img/keyboard.PNG'
+           }
+       }
+
+       function onkeyUp (event){
+           if(event.key == "w" || event.key == "W"){
+               document.getElementById("status").innerHTML = 'sprite stop move up';
+               keyid.src = 'img/keyboard.PNG'
+           }
+           else if(event.key == "s" || event.key == "S"){
+               document.getElementById("status").innerHTML = 'sprite stop move down';
+               keyid.src = 'img/keyboard.PNG'
+           }
+           else if(event.key == "a" || event.key == "A"){
+               document.getElementById("status").innerHTML = 'sprite stop move left';
+               keyid.src = 'img/keyboard.PNG'
+           }
+           else if(event.key == "d" || event.key == "D"){
+               document.getElementById("status").innerHTML = 'sprite stop move right';
+               keyid.src = 'img/keyboard.PNG'
+           }
+           else{
+               document.getElementById("status").innerHTML = 'sprite stop move';
+               keyid.src = 'img/keyboard.PNG'
+           }
+       }
+    </script> 
+</html>
