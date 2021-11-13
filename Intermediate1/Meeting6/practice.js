@@ -11,10 +11,10 @@
 
 // ------------------------------------------------
 
-function magic(){
-    return function calc(x){
-        return x * 2;
-    }
-}
-var answer = magic();
-console.log(answer(1337));
+// function magic(){
+//     return function calc(x){
+//         return x * 2;
+//     }
+// }
+// var answer = magic();
+// console.log(answer(1337));
