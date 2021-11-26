@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title>Learn JavaScript Variable</title>
+    </head>
+     
+    <style>
+        body{
+            background-image: url("image/background.png");
+            height: 100%;
+            margin: 0, auto;
+            text-align: center;
+            cursor: url("image/crosshair.png") 50 50, auto;
+        }
+
+        #player { 
+            position: absolute; 
+            transition: all 0,1s;
+        }
+
+        p {
+            background-color: white;
+            color: black;
+            width: 100px;
+            height: 30px;
+            border-radius: 15px;
+            font-size: 15px;
+            border-style: none;
+            text-align: center;
+        }
+    </style>
+
+    <body>
+       <img width="120px" height="120px" src="image/bird.webp" id="player">
+       <p id="scoreMain">Score: <span class="scoreGame">0</span></p>
+    </body>
+
+    <script >
+        // 1. Set Variable
+    const showScore = document.querySelector('.scoreGame');
+    var bird = document.getElementById('player');
+    var score = 0;
+    var time = 0;
+
+    // 2. move bird in a random position
+    function randomMove() {
+        var x = Math.floor(Math.random()*481);
+        var y = Math.floor(Math.random()*1052);
+        bird.style.top = x + 'px';
+        bird.style.left = y + 'px';
+    }
+
+    // 3. Loop random move
+    var transition = setInterval(function () {
+        randomMove();
+        time++;
+
+        if (time == 10) {
+            if (score >= 5) {
+                document.body.style.backgroundImage = "url(image/win.jpg)";
+                reset();
+            } else {
+                document.body.style.backgroundImage = "url(image/lose.png)";
+                reset();
+            }
+        }
+
+    }, 1000);
+
+    // 4. click event listener
+    bird.onclick = function () {
+        score++;
+        showScore.innerHTML = `${score} `;
+        console.log(score)
+    };
+
+    function reset() {
+        // perintah untuk menghentikan perulangan
+        clearInterval(transition);
+        bird.style.display='none';
+        document.getElementById('scoreMain').style.display='none';
+    }
+
+    </script>
+</html>
