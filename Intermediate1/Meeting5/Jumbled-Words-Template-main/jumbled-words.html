@@ -90,35 +90,47 @@
     let result = document.querySelector('.red')
     let submit = document.querySelector('#submit')
     let input =document.querySelector('#answer')
-    
+        
     // Step 3. Call Function Generate Word
     // Write to code bellow
-    
-  
-   // Step 1. Function Shuffle Word
-   // Write to code bellow
-   function shuffleWord(word) {
-       var shuffleWord = '';
-       word = word.split('');
+    let key = generateWord()
 
-       while (word.length > 0){
-           shuffleWord += word.splice(word.length * Math.random() << 0, 1);
-       }
+    // Step 2. Function Generate Word
+    // Write to code bellow
+    function generateWord(){
+        let words = ['JAVASCRIPT', 'PYTHON', 'HTML', 'JAVA', 'RUBY']
+        let random = parseInt((Math.random() * words.length));
+        let choosenWord = words[random]
+        jumbled.innerHTML =  shuffelWord(choosenWord)
+        return choosenWord
+    }
 
-       return shuffleWord;
-   }
+    // Step 1. Function Shuffle Word
+    // Write to code bellow
+    function shuffelWord(word) {
+        var shuffledWord = '';
+        word = word.split('');
+        while (word.length > 0) {
+            shuffledWord += word.splice(word.length * Math.random() << 0, 1);
+        }
+        return shuffledWord;
+    }
 
-   console.log(suffleWord('AKU'));
-   
-   
-   // Step 2. Function Generate Word
-   // Write to code bellow
-    
-    
     // Step 4. Check Answer
     // Write to code bellow
+    submit.onclick= function(){
+        var answer = input.value.toUpperCase()
+        if(answer != key){
+            result.innerHTML = 'TRY AGAIN!'
+            input.value=''
+        }else{
+            result.innerHTML = 'CORRECT!'  
+            input.value= ''
+            key = generateWord()
+        }
+    }        
     
     
-        
+
 </script>
 </html>
