@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumbled Words</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+
+        .game {
+            border: 10px solid #FFEDED;
+            border-radius: 30px;
+            width: 50%;
+            text-align: center;
+            margin: 5% auto;
+        }
+
+        .jumbled {
+            background-color: #FFEDED;
+            width: 80%;
+            margin: 5% auto;
+            padding: 5px;
+        }
+
+        .input {
+            width: 80%;
+            margin: 5% auto;
+        }
+
+        input[type='text'] {
+            width: 80%;
+            height: 50px;
+            background-color: #A8E7E9;
+            text-align: center;
+            font-size: 24px;
+            /* text-transform: lowercase; */
+        }
+
+        input[type='submit'] {
+            background-color: #77D970;
+            box-shadow: 3px 3px 3px grey;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        input[type='submit']:hover {
+            color: white;
+        }
+
+        input[type='submit']:active {
+            transform: translateY(5px);
+        }
+
+        .result {
+            background-color: white;
+            width: 80%;
+            margin: 5% auto;
+            padding: 2px;
+        }
+        h3,p{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="game">
+        <h1>Jumbled Word Game</h1>
+        <p>Keyword : Coding Language</p>
+        <div class="jumbled">
+            <h2 id="jumbled"></h2>
+        </div>
+        <p>Enter an Answer</p>
+        <div class="input">
+            <input type="text" id="answer" name="answer">
+            <input type="submit" id="submit">
+        </div>
+        <div class="result">
+            <h3 class="red"></h3>
+        </div>
+    </div>
+</body>
+<script>
+    let jumbled = document.querySelector('#jumbled')
+    let result = document.querySelector('.red')
+    let submit = document.querySelector('#submit')
+    let input =document.querySelector('#answer')
+    
+    // Step 3. Call Function Generate Word
+    // Write to code bellow
+    
+  
+   // Step 1. Function Shuffle Word
+   // Write to code bellow
+   function shuffleWord(word) {
+       var shuffleWord = '';
+       word = word.split('');
+
+       while (word.length > 0){
+           shuffleWord += word.splice(word.length * Math.random() << 0, 1);
+       }
+
+       return shuffleWord;
+   }
+
+   console.log(suffleWord('AKU'));
+   
+   
+   // Step 2. Function Generate Word
+   // Write to code bellow
+    
+    
+    // Step 4. Check Answer
+    // Write to code bellow
+    
+    
+        
+</script>
+</html>
