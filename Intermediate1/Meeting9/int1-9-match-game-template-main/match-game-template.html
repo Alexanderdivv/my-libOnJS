@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Timedoor Memory Card Game</title>
+  </head>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      background: rgb(244, 147, 46);
+    }
+
+    .memory-game {
+      width: 640px;
+      height: 640px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      perspective: 1000px;
+    }
+
+    .memory-card {
+      width: calc(25% - 10px);
+      height: calc(33.333% - 10px);
+      margin: 5px;
+      position: relative;
+      transform: scale(1);
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    }
+
+    .memory-card:active {
+      transform: scale(0.97);
+      transition: transform 0.2s;
+    }
+
+    .memory-card.flip {
+      transform: rotateY(180deg);
+    }
+
+    .front-face,
+    .back-face {
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      position: absolute;
+      border-radius: 5px;
+      background: rgb(255, 255, 255);
+      backface-visibility: hidden;
+    }
+
+    .front-face {
+      transform: rotateY(180deg);
+    }
+  </style>
+
+  <body>
+    <section class="memory-game">
+      <div class="memory-card" data-framework="javascript">
+        <img class="front-face" src="img/js.PNG" alt="JAVASCRIPT" />
+        <img class="back-face" src="img/timedoor.png" alt="TIMEDOOR" />
+      </div>
+      <div class="memory-card" data-framework="javascript">
+        <img class="front-face" src="img/js.PNG" alt="JAVASCRIPT" />
+        <img class="back-face" src="img/timedoor.png" alt="TIMEDOOR" />
+      </div>
+
+      <div class="memory-card" data-framework="html">
+        <img class="front-face" src="img/html.PNG" alt="HTML" />
+        <img class="back-face" src="img/timedoor.png" alt="TIMEDOOR" />
+      </div>
+      <div class="memory-card" data-framework="html">
+        <img class="front-face" src="img/html.PNG" alt="HTML" />
+        <img class="back-face" src="img/timedoor.png" alt="TIMEDOOR" />
+      </div>
+
+      <div class="memory-card" data-framework="c">
+        <img class="front-face" src="img/c.PNG" alt="C" />
+        <img class="back-face" src="img/timedoor.png" alt="TIMEDOOR" />
+      </div>
+      <div class="memory-card" data-framework="c">
+        <img class="front-face" src="img/c.PNG" alt="C" />
+        <img class="back-face" src="img/timedoor.png" alt="TIMEDOOR" />
+      </div>
+
+      <div class="memory-card" data-framework="scratch">
+        <img class="front-face" src="img/scratch.PNG" alt="SCRATCH" />
+        <img class="back-face" src="img/timedoor.png" alt="TIMEDOOR" />
+      </div>
+      <div class="memory-card" data-framework="scratch">
+        <img class="front-face" src="img/scratch.PNG" alt="SCRATCH" />
+        <img class="back-face" src="img/timedoor.png" alt="TIMEDOOR" />
+      </div>
+
+      <div class="memory-card" data-framework="cue">
+        <img class="front-face" src="img/cue.PNG" alt="CUE ROBOT" />
+        <img class="back-face" src="img/timedoor.png" alt="TIMEDOOR" />
+      </div>
+      <div class="memory-card" data-framework="cue">
+        <img class="front-face" src="img/cue.PNG" alt="CUE ROBOT" />
+        <img class="back-face" src="img/timedoor.png" alt="TIMEDOOR" />
+      </div>
+
+      <div class="memory-card" data-framework="vscode">
+        <img class="front-face" src="img/vscode.PNG" alt="VSCODE" />
+        <img class="back-face" src="img/timedoor.png" alt="TIMEDOOR" />
+      </div>
+      <div class="memory-card" data-framework="vscode">
+        <img class="front-face" src="img/vscode.PNG" alt="VSCODE" />
+        <img class="back-face" src="img/timedoor.png" alt="TIMEDOOR" />
+      </div>
+    </section>
+  </body>
+
+  <script>
+    // 1. Set Variable
+    // jika dilihat dari tag <body> diatas, semua kartu memiliki kelas yang sama, yaitu "memory-card"
+    // hasFlippedCard akan menyimpan kondisi kartu, jika terbuka maka "true", jika tidak terbuka maka "false"
+    // lockBoard akan menyimpan kondisi jika kartu berhasil ditemukan pasangannya. saat sudah ditemukan, maka nilainya menjadi "true"
+    // firstcard untuk menampuk kartu yang dipilih pertama, secondcard utnuk kartu yang kedua
+    const cards = document.querySelectorAll(".memory-card");
+    var hasFlippedCard = false;
+    var lockBoard = false;
+    var firstCard, secondCard;
+
+    // 2.Event click
+    // menambahkan event "click" ke semua kartu
+    cards.forEach((card) => card.addEventListener("click", flipCard));
+
+    // fungsi flipCard
+    // fungsi ini gunanya untuk melakukan flip ke tiap kartu yang kita klik.
+    // sebelum masuk lebih dalam, ingat bahwa return akan menghentikan eksekusi perintah dan langsung mengembalikan apapun nilai yang sudah dieksekusi didalam fungsi
+    // pertama diperiksa, apakah kartu sudah dikunci (atau sudah menemukan pasangannya) atau belum. jika sudah, maka fungi akan selesai
+    // kedua, jika kartu yang diklik sama dengan kartu pertama, makan akan return atau fungsi selesai
+    // jika tidak, maka kartu yang diklik akan ditambahkan ke pilihan kartu pertama
+    // pada perulangan ketiga, jika ternyata sudah ada kartu yang dipilih pertama, maka kartu yang dipilih selanjutnya akan menjadi pilihan kartu kedua
+    function flipCard() {
+      // first condition
+      if (lockBoard) return;
+      // second condition
+      if (this === firstCard) return;
+      this.classList.add("flip");
+      // third condition
+      if (!hasFlippedCard) {
+        hasFlippedCard = true;
+        firstCard = this;
+        return;
+      }
+      secondCard = this;
+      checkForMatch();
+    }
+
+    // funcsi memeriksa kedua kartu
+    // fungsi untuk memeriksa kecocokan kedua kartu yang telah dipilih
+    function checkForMatch() {
+      // 1. set variable
+      let isMatch = firstCard.dataset.framework == secondCard.dataset.framework;
+
+      // 2. check condition
+      if (isMatch == true) {
+        disableCards();
+      } else {
+        unflipCards();
+      }
+    }
+
+    // fungsi untuk menghilangkan event listener (click)
+    function disableCards() {
+      firstCard.removeEventListener("click", flipCard);
+      secondCard.removeEventListener("click", flipCard);
+      resetBoard();
+    }
+
+    // fungsi untuk menutup kembali kartu yang terbuka
+    function unflipCards() {
+      lockBoard = true;
+      setTimeout(() => {
+        firstCard.classList.remove("flip");
+        secondCard.classList.remove("flip");
+        resetBoard();
+      }, 1500);
+    }
+
+    // fungsi reset board gunanya untuk mereset semua variabel
+    function resetBoard() {
+      hasFlippedCard = false;
+      lockBoard = false;
+      firstCard = null;
+      secondCard = null;
+    }
+
+    // fungsi untuk mengacak kartu
+    (function shuffle() {
+      cards.forEach((card) => {
+        let randomPos = Math.floor(Math.random() * 12);
+        card.style.order = randomPos;
+      });
+    })();
+  </script>
+</html>
