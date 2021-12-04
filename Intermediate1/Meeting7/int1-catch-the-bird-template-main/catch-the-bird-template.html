@@ -54,7 +54,7 @@
       randomMove();
       time++;
 
-      if (time == 20) {
+      if (time == 200) {
         if (score >= 5) {
           document.body.style.backgroundImage = "url(image/win.jpg)";
           reset();
@@ -63,7 +63,7 @@
           reset();
         }
       }
-    }, 2000);
+    }, 1000);
 
     // 4. click event listener
     bird.onclick = function () {
