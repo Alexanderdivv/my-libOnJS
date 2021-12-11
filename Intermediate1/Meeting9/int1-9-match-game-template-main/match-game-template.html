@@ -157,7 +157,7 @@
     let waktuMain = setInterval(() => {
       time++;
       waktu.innerHTML = `${time}`;
-      if (time == 60) {
+      if (time == 5) {
         waktu.innerHTML = "selesai";
         clearInterval(waktuMain);
         cards.forEach((card) => card.removeEventListener("click", flipCard));
