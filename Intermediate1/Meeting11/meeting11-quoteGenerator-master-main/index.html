@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <link rel="stylesheet" href="style.css">\
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Random Quote Generator by @timedooracademy</title>
+        <link rel="stylesheet" href="https://unpkg.com/papercss@1.4.0/dist/paper.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row flex-top flex-center">
+               <h1>Random Quote Generator</h1>
+            </div>
+            <div>
+                <button id="button" class="btn-generate" onclick="generate()">get quote</button>
+                <button id="button" class="btn-seeAll" onclick="seeAllQuotes()">see all quotes</button>   
+            </div>
+            <div>
+                <header class="border shadow">
+                    <p class="quote card-body center" id="quoteSection">.....</p>
+                </header>
+            </div>
+            
+            <div class="row flex-center">
+                <label id="input-label">Insert quote here : </label>
+                <main class="card">   
+                    <input type="text" id="insertSection"></p>
+                </main>
+                <button id="button" class="btn-newQuotes" onclick="newQuotes()">add new quote</button>
+               
+            </div>
+            <div class="row flex-bottom flex-center">
+                <footer>
+                 <p>A  project by <a href="https://www.instagram.com/timedooracademy" target="_blank">@timedooracademy</a></p>
+                </footer>
+            </div>                
+        </div>
+    </body>
+    <script src="app.js"></script>
+</html>
