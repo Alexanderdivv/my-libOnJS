@@ -1,0 +1,74 @@
+<html>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="640"
+      height="380"
+      style="background-color: greenyellow"
+    >
+    </canvas>
+  </body>
+  <script>
+    var canvas = document.getElementById("myCanvas");
+    var context = canvas.getContext("2d");
+
+    // menentukan ukuran font
+    context.font = "40px cursive";
+
+    // mementukan posisi teks
+    context.textAlign = "center";
+
+    // memberi warna
+    context.fillStyle = "blue";
+
+    // membuat teks biasa pada canvas
+    context.fillText("Welcome", 325, 60);
+
+    // membuat teks dengan outline pada canvas
+    context.strokeText("This is my canvas", 300, 90);
+
+    // membuat rectangle
+
+    // context.fillStyle = "red";
+    // context.fillRect(300, 210, 100, 100);
+    // tentukan titik koordinat yang tepat. titik x,y sebagai awalan sudut pertama
+    // context.clearRect(310, 220, 50, 50);
+
+    // yg latihan di buku
+    context.fillStyle = "red";
+    context.fillRect(200, 325, 250, 50);
+    context.clearRect(220, 330, 210, 30);
+
+    // membuat segitiga/triangle
+    context.fillStyle = "red"; // <- adalah styling
+    context.beginPath();
+    context.moveTo(325, 230);
+    context.lineTo(300, 270);
+    context.lineTo(350, 270);
+    context.closePath();
+    context.fill();
+
+    // membuat lingkaran
+    context.fillStyle = "black";
+    context.strokeStyle = "White";
+    context.lineWidth = "20";
+    context.beginPath();
+    context.arc(130, 150, 40, 0, 2 * Math.PI);
+    context.fill();
+    context.stroke();
+
+    context.fillStyle = "black";
+    context.strokeStyle = "White";
+    context.lineWidth = "20";
+    context.beginPath();
+    context.arc(520, 150, 40, 0, 2 * Math.PI);
+    context.fill();
+    context.stroke();
+
+    // // latihan terakhir
+    // context.strokeStyle = "green";
+    // context.fillStyle = "red";
+    // context.font = "60px cursive";
+    // context.fillText("Welcome ", 10, 60);
+  </script>
+</html>
