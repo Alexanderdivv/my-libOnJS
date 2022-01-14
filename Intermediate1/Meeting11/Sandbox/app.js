@@ -1,52 +1,52 @@
 let fruit = ["apple", "banana", "dragonfruit", "pineapple", "mango"]
 document.write(fruit)
 
-document.write("<br> --------------- <br>")
+// document.write("<br> --------------- <br>")
 
-document.write(fruit[2])
+// document.write(fruit[2])
 
 // document.write("<br> --------------- <br>")
 
 // fruit[10] = "Watermelon"
 
-document.write("<br> --------------- <br>")
+// document.write("<br> --------------- <br>")
 
-document.write(fruit)
+// document.write(fruit)
 
-document.write("<br> --------------- <br>")
+// document.write("<br> --------------- <br>")
 
-fruit.push("Pear")
+// fruit.push("Pear")
 
-document.write("<br> --------------- <br>")
+// document.write("<br> --------------- <br>")
 
-document.write(fruit)
+// document.write(fruit)
 
 // document.write("<br> --------------- <br>")
 
 // delete fruit[2]
 
-document.write("<br> --------------- <br>")
+// document.write("<br> --------------- <br>")
 
-document.write(fruit)
+// document.write(fruit)
 
-fruit.pop();
+// fruit.pop();
 
-document.write("<br> --------------- <br>")
+// document.write("<br> --------------- <br>")
 
-document.write(fruit)
+// document.write(fruit)
 
-fruit.shift();
+// fruit.shift();
 
-document.write("<br> --------------- <br>")
+// document.write("<br> --------------- <br>")
 
-document.write(fruit)
+// document.write(fruit)
 
-fruit.splice(1, 2)
+// fruit.splice(1, 2)
 
-document.write("<br> --------------- <br>")
+// document.write("<br> --------------- <br>")
 
-document.write(fruit)
+// document.write(fruit)
 
-document.write("<br> --------------- <br>")
+// document.write("<br> --------------- <br>")
 
-document.write(fruit.length)
+// document.write(fruit.length)
