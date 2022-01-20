@@ -38,7 +38,7 @@
 //  }
 // ---
 
-// // membuat objek dengan Class 
+// membuat objek dengan Class 
 // class Car{
 //     constructor (type, color){
 //         this.type = type
@@ -79,3 +79,17 @@
 // console.log(student3.display());
 // console.log(student4.display());
 // console.log(student5.display());
+
+
+// ---
+
+// var characters = {
+//     name : "alexander",
+//     birthDate : " May 5",
+//     knownAs : "Straw Hat",
+//     greeting : function () {
+//         console.log("My Name is " + this.name + " also known as " + this.knownAs)
+//     }
+// }
+
+// console.log(characters);
