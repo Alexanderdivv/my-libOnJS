@@ -30,3 +30,9 @@ console.log(shuffleWord('TEST'));
 // split wordd/string
 // let words = 'JAVA'
 // console.log(words.split(''));
+
+
+// NOTES:
+// split() -> untuk memecah string menjadi array
+// splice(a,b) menghapus elemen pada index a, sebanyak b
+// word.length * Math.random() << 0 -> leftshift, penggunaannya disini mirip seperti mengubah bilangan float ke int
