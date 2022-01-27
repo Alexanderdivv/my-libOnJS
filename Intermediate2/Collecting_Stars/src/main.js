@@ -1,7 +1,7 @@
 import Phaser from 'phaser'
 
 // import HelloWorldScene from './scenes/HelloWorldScene'
-import AmongUsScene from './scenes/AmongUsScene'
+import CollectingStartScene from './scenes/CollectingStartsScene'
 
 const config = {
 	type: Phaser.AUTO,
@@ -14,7 +14,7 @@ const config = {
 		}
 	},
 	// scene: [HelloWorldScene]
-	scene: [AmongUsScene]
+	scene: [CollectingStartScene]
 }
 
 export default new Phaser.Game(config)
