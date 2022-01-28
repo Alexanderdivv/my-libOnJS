@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Snake Game</title>
+  </head>
+  <style>
+    canvas {
+      background: white;
+      display: flex;
+      display: block;
+      margin: 0 auto;
+    }
+    h1,
+    p {
+      text-align: center;
+    }
+    html {
+      font-family: "Comic Sans MS", "Comic Sans", cursive;
+    }
+    div {
+      width: 100;
+    }
+  </style>
+  <body>
+    <h1>Snake Game</h1>
+    <p>Score : <span id="score"> </span></p>
+    <!-- Step 1. Create Canvas-->
+    <canvas
+      width="400"
+      height="400"
+      id="game"
+      style="background-color: palegreen"
+    ></canvas>
+    <p>Created by Alex</p>
+  </body>
+
+  <script>
+    // Step 2. Acces Canvas & Context
+    var canvas = document.getElementById("game");
+    var ctx = canvas.getContext("2d");
+
+    // Step 3. Initialize Variable
+    var score = 0;
+    var count = 0;
+    var grid = 16;
+
+    // Step 4. Create object
+    var snake = {
+      x: 160,
+      y: 160,
+      dx: grid,
+      dy: 0,
+      cells: [],
+      maxCells: 4,
+    };
+
+    // create object apple
+    var apple = {
+      x: 320,
+      y: 320,
+    };
+
+    // step 5. Key Arrow Controller
+    document.addEventListener("keydown", function (e) {
+      // left arrow key
+      if (e.which === 37 && snake.dx === 0) {
+        snake.dx = -grid;
+        snake.dy = 0;
+      }
+      // up arrow key
+      else if (e.which === 38 && snake.dy === 0) {
+        snake.dy = -grid;
+        snake.dx = 0;
+      }
+      // right arrow key
+      else if (e.which === 39 && snake.dx === 0) {
+        snake.dx = grid;
+        snake.dy = 0;
+      }
+      // down arrow key
+      else if (e.which === 40 && snake.dy === 0) {
+        snake.dy = grid;
+        snake.dx = 0;
+      }
+    });
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    // game loop
+    function loop() {
+      requestAnimationFrame(loop);
+      if (++count < 2) {
+        return;
+      }
+
+      count = 0;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // move snake by it's velocity
+      snake.x += snake.dx;
+      snake.y += snake.dy;
+
+      // wrap snake position horizontally on edge of screen
+      if (snake.x < 0) {
+        snake.x = canvas.width - grid;
+      } else if (snake.x >= canvas.width) {
+        snake.x = 0;
+      }
+
+      // wrap snake position vertically on edge of screen
+      if (snake.y < 0) {
+        snake.y = canvas.height - grid;
+      } else if (snake.y >= canvas.height) {
+        snake.y = 0;
+      }
+
+      // keep track of where snake has been. front of the array is always the head
+      snake.cells.unshift({ x: snake.x, y: snake.y });
+
+      // remove cells as we move away from them
+      if (snake.cells.length > snake.maxCells) {
+        snake.cells.pop();
+      }
+
+      // draw apple
+      ctx.fillStyle = "red";
+      ctx.fillRect(apple.x, apple.y, grid - 1, grid - 1);
+
+      // draw snake one cell at a time
+      ctx.fillStyle = "black";
+      snake.cells.forEach(function (cell, index) {
+        // drawing 1 px smaller than the grid creates a grid effect in the snake body so you can see how long it is
+        ctx.fillRect(cell.x, cell.y, grid - 1, grid - 1);
+
+        // snake ate apple
+        if (cell.x === apple.x && cell.y === apple.y) {
+          score += 1;
+          document.getElementById("score").innerHTML = score;
+          snake.maxCells++;
+          apple.x = getRandomInt(0, 25) * grid;
+          apple.y = getRandomInt(0, 25) * grid;
+        }
+
+        for (var i = index + 1; i < snake.cells.length; i++) {
+          if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+            // score = 0;
+            snake.x = 160;
+            snake.y = 160;
+            snake.cells = [];
+            snake.maxCells = 4;
+            snake.dx = grid;
+            snake.dy = 0;
+            apple.x = getRandomInt(0, 25) * grid;
+            apple.y = getRandomInt(0, 25) * grid;
+          }
+        }
+      });
+    }
+
+    requestAnimationFrame(loop);
+  </script>
+</html>

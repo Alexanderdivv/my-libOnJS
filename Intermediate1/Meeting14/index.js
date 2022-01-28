@@ -93,3 +93,15 @@
 // }
 
 // console.log(characters);
+
+
+
+// var x = 10;
+// y = x + 2
+// console.log(y);
+// x = -x
+
+// y = x + 2
+// console.log(y);
+
+// console.log(Math.random()*/*batas*/2);

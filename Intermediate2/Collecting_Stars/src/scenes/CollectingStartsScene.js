@@ -6,7 +6,7 @@ export default class CollectingStartScene extends Phaser.Scene{
         super(`collecting-starts-scene`)
     }
     preload(){
-        this.load.image(`ground`, `images/platform.png`)
+        this.load.image(`ground`, 'images/platform.png')
         this.load.image(`sky`, `images/sky.png`)
         this.load.image(`star`, `images/star.png`)
         this.load.image(`bomb`, `images/bomb.png`)
