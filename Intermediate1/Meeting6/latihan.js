@@ -7,23 +7,17 @@
 // for (let i = 0; i < 10; i++) {
 //     //pemanggilan fungsi
 //     myfunction();
-    
-// }
 
+// }
 
 // // fungsi dengan parameter
 // // tandanya didalam kurung ada nilai
 // function luas(panjang, lebar) {
-//     return panjang * lebar;    
+//     return panjang * lebar;
 // }
 
 // // pemanggilan fungsi dengan parameter
 // console.log(luas(10, 6));
-
-
-
-
-
 
 // function greeting(name, age) {
 //     if (age > 10) {
@@ -36,25 +30,33 @@
 // console.log(greeting("John", 20));
 // console.log(greeting("Cobee", 2));
 
-
 // function counter() {
-//     for (let count = 0; ; count++) {
-//         console.log(count);
-//         if (count === 10) {
-//             return;
-//         }
+//   for (let count = 0; ; count++) {
+//     console.log(count);
+//     if (count === 10) {
+//       return;
 //     }
+//   }
 // }
-
 
 // counter();
 
-
-// function magic() {
-//     return function cacl(x) {
-//         return x * 2;
-//     }
+// function magic(x) {
+//   return function cacl(x) {
+//     return x * 2;
+//   };
 // }
 
 // var answer = magic();
 // console.log(answer(1337));
+
+var a = 10;
+var b = 20;
+
+// create function calculate a*b
+function calculate() {
+  c = a * b;
+  return c;
+}
+calculate();
+console.log(c);
