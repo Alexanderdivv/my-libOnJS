@@ -50,13 +50,13 @@
 // var answer = magic();
 // console.log(answer(1337));
 
-var a = 10;
-var b = 20;
+// var a = 10;
+// var b = 20;
 
-// create function calculate a*b
-function calculate() {
-  c = a * b;
-  return c;
-}
-calculate();
-console.log(c);
+// // create function calculate a*b
+// function calculate() {
+//   c = a * b;
+//   return c;
+// }
+// calculate();
+// console.log(c);
