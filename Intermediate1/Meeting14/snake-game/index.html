@@ -31,10 +31,36 @@
       id="game"
       style="background-color: palegreen"
     ></canvas>
-    <p>Created by Alex</p>
+    <p>
+      Created by Alex
+      <br />
+      <button onclick="klik()">
+        <img src="left.png" height="50px" width="50px" />
+      </button>
+      <button onclick="">
+        <img src="up.png" height="50px" width="50px" />
+      </button>
+      <button id="right">
+        <img src="right.png" height="50px" width="50px" />
+      </button>
+      <br />
+      <button onclick="">
+        <img src="down.png" height="50px" width="50px" />
+      </button>
+    </p>
   </body>
 
   <script>
+    document.getElementById("right").onclick = function () {
+      snake.dx = grid;
+      snake.dy = 0;
+    };
+    function klik() {
+      // left arrow key
+      snake.dx = -grid;
+      snake.dy = 0;
+    }
+
     // Step 2. Acces Canvas & Context
     var canvas = document.getElementById("game");
     var ctx = canvas.getContext("2d");
@@ -62,6 +88,7 @@
 
     // step 5. Key Arrow Controller
     document.addEventListener("keydown", function (e) {
+      console.log("keydown");
       // left arrow key
       if (e.which === 37 && snake.dx === 0) {
         snake.dx = -grid;
@@ -90,7 +117,7 @@
     // game loop
     function loop() {
       requestAnimationFrame(loop);
-      if (++count < 2) {
+      if (++count < 6) {
         return;
       }
 

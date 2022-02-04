@@ -41,14 +41,14 @@
 
 // counter();
 
-// function magic(x) {
-//   return function cacl(x) {
-//     return x * 2;
-//   };
-// }
+function magic() {
+  return function cacl(x) {
+    return x * 2;
+  };
+}
 
-// var answer = magic();
-// console.log(answer(1337));
+var answer = magic();
+console.log(answer(1337));
 
 // var a = 10;
 // var b = 20;
