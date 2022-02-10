@@ -1,6 +1,10 @@
 import Phaser from "phaser";
 
-import BunnyJumpScene from "./scenes/BunnyJumpScene";
+// Meeting 4
+// import BunnyJumpScene from "./scenes/BunnyJumpScene";
+
+// Meeting 5
+import BunnyJumpScene from "./scenes/BunnyJumpScene2";
 
 const config = {
   type: Phaser.AUTO,
