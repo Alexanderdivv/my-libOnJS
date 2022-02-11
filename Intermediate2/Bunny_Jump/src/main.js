@@ -9,6 +9,9 @@ import Phaser from "phaser";
 // Meeting 6
 import BunnyJumpScene from "./scenes/BunnyJumpScene3";
 
+// Finish
+// import BunnyJumpScene from "./scenes/BunnyJumpSceneG";
+
 const config = {
   type: Phaser.AUTO,
   width: 480,

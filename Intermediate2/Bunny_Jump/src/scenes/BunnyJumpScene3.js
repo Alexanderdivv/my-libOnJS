@@ -1,6 +1,7 @@
 import Phaser from "phaser";
 import Carrot from "../game/Carrot";
 var carrots;
+var carrotsCollected;
 var platforms;
 var player;
 var cursors;
@@ -61,6 +62,21 @@ export default class BunnyJumpScene extends Phaser.Scene {
     });
     // platforms berbenturan dengan carrots
     this.physics.add.collider(this.platforms, this.carrots);
+    this.physics.add.overlap(
+      this.player,
+      this.carrots,
+      this.handleCollectCarrot,
+      undefined,
+      this
+    );
+    this.carrotsCollected = 0;
+    // menambahkan teks score
+    const style = { color: `#000`, fontSize: `24px` };
+    // mengubah nilai collected carrots
+    this.carrotsCollectedText = this.add
+      .text(240, 10, `Carrots: 0`, style)
+      .setScrollFactor(0)
+      .setOrigin(0.5, 0);
   }
 
   update() {
@@ -96,8 +112,11 @@ export default class BunnyJumpScene extends Phaser.Scene {
       const platformChild = child;
       const scrollY = this.cameras.main.scrollY;
       if (platformChild.y >= scrollY + 700) {
-        platformChild.y = scrollY - Phaser.Math.Between(0, 200);
+        platformChild.y = scrollY - Phaser.Math.Between(50, 100);
         platformChild.body.updateFromGameObject();
+
+        // panggil method carrot
+        this.addCarrotAbove(platformChild);
       }
     });
     this.horizontalWrap(this.player);
@@ -122,5 +141,27 @@ export default class BunnyJumpScene extends Phaser.Scene {
     } else if (sprite.x > gameWidth + halfWidth) {
       sprite.x = -halfWidth;
     }
+  }
+
+  addCarrotAbove(sprite) {
+    const y = sprite.y - sprite.displayHeight;
+    const carrot = this.carrots.get(sprite.x, y, `carrot`);
+
+    carrot.setActive(true); //aktifkan carrot
+    carrot.setVisible(true); //tampilkan carrot
+
+    // menambahkan fisik dari carrot
+    this.add.existing(carrot);
+    carrot.body.setSize(carrot.width, carrot.height);
+    this.physics.world.enable(carrot);
+    return carrot;
+  }
+
+  handleCollectCarrot(player, carrot) {
+    this.carrots.killAndHide(carrot);
+    this.physics.world.disableBody(carrot.body);
+    this.carrotsCollected++;
+    const value = `Carrots: ${this.carrotsCollected}`;
+    this.carrotsCollectedText.text = value;
   }
 }
