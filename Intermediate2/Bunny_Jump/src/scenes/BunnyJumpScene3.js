@@ -1,4 +1,6 @@
 import Phaser from "phaser";
+import Carrot from "../game/Carrot";
+var carrots;
 var platforms;
 var player;
 var cursors;
@@ -53,6 +55,12 @@ export default class BunnyJumpScene extends Phaser.Scene {
 
     // membuat kamera dapat mengikuti player/bunny keatas
     this.cameras.main.startFollow(this.player);
+    // menambahkan objek carrots ke scene
+    this.carrots = this.physics.add.group({
+      classType: Carrot,
+    });
+    // platforms berbenturan dengan carrots
+    this.physics.add.collider(this.platforms, this.carrots);
   }
 
   update() {
