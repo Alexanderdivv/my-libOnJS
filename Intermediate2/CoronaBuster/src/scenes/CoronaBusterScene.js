@@ -31,7 +31,7 @@ export default class CoronaBusterScene extends Phaser.Scene {
     );
     this.createButton();
   }
-  update() {
+  update(time) {
     //   membuat awan bergerak
     this.clouds.children.iterate((child) => {
       // arah gerak awan ke bawah
