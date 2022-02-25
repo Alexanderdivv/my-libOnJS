@@ -1,6 +1,10 @@
 import Phaser from "phaser";
 
-import CoronaBusterScene from "./scenes/CoronaBusterScene";
+// Meeting8
+// import CoronaBusterScene from "./scenes/CoronaBusterScene";
+
+// Meeting 9
+import CoronaBusterScene from "./scenes/CoronaBusterScene2";
 
 const config = {
   type: Phaser.AUTO,

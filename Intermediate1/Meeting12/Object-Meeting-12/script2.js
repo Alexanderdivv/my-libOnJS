@@ -11,57 +11,54 @@
 
 // kalau ada this, dia akses yg global
 
-
-
 // -----------------------
 
-// function segitiga(){
+// function segitiga() {
 //   var alas = 6;
 //   var tinggi = 2;
 //   return alas * tinggi;
 // }
 
 // segitiga();
-// console.log(alas);
-
+// console.log(this.alas);
 
 // --------------------------------
 // array = nampung variabel yg tipenya sama
 // objek = nampung variabel yg tipenya beda2
 
 // var person = {
-// firstName: "Ryan",
-// lastName : "Alexandra",
-// id       : 100600,
-// fullName : function() {
-//   return this.firstName + " " + this.lastName;  }
+//   firstName: "Ryan",
+//   lastName: "Alexandra",
+//   id: 100600,
+//   fullName: function () {
+//     return this.firstName + " " + this.lastName;
+//   },
 // };
 
-// console.log(person.fullName())
+// console.log(person.fullName());
 
 // -----------------------------
 
+var person = {
+  firstName: "Ryan",
+  lastName: "Alexandra",
+};
 
-// var person = {
-//   firstName: "Ryan",
-//   lastName: "Alexandra"
-// }
+var school = {
+  firstName: "Timedoor",
+  lastName: "Academy",
+};
 
-// var school = {
-//   firstName: "Timedoor",
-//   lastName: "Academy"
-// }
-
-// function fullName(greeting){
-//   return greeting + this.firstName + " " + this.lastName;
-// }
+function fullName() {
+  return this.firstName + " " + this.lastName;
+}
 
 // // perbedaannya, call bisa passing nilai seperti biasa (variabel biasa)
 // // kalau apply, harus dibuatkan array
 
-// console.log(fullName.call(person, "hello ")) 
+console.log(fullName.call(person, "hello "));
 
-// console.log(fullName.apply(school, ["hello "]))
+console.log(fullName.apply(school, ["hello "]));
 
 // ---------------------------------
 
@@ -76,6 +73,4 @@
 
 // mySelf();
 
-
 // JSON.stringify <- objek ke  string
-
