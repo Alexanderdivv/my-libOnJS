@@ -59,7 +59,7 @@ export default class CoronaBusterScene extends Phaser.Scene {
     });
 
     this.time.addEvent({
-      delay: 2000,
+      delay: Phaser.Math.Between(1000, 3000),
       callback: this.spawnEnemy,
       callbackScope: this,
       loop: true,
