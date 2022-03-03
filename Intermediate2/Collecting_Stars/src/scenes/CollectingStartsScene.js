@@ -123,14 +123,6 @@ export default class CollectingStartScene extends Phaser.Scene {
     }
   }
 
-  hitBomb(player, bomb) {
-    this.physics.pause(); //algoritma no 6a, untuk menghentikan game
-    // untuk kebal dari bomb, bisa mengganti pause dengan resume
-    player.setTint(0xff0000); //algoritma no 6b
-    player.anims.play(`turn`); //algoritma no 6c
-    gameOver = true; //algoritma no 6d
-  }
-
   update() {
     //   jika keyboard left arrow ditekan
     if (cursors.left.isDown) {
@@ -165,5 +157,13 @@ export default class CollectingStartScene extends Phaser.Scene {
       null, //proses callback yang tidak dibutuhkan
       this // memastikan overlap pada scene ini
     );
+  }
+
+  hitBomb(player, bomb) {
+    this.physics.pause(); //algoritma no 6a, untuk menghentikan game
+    // untuk kebal dari bomb, bisa mengganti pause dengan resume
+    player.setTint(0xff0000); //algoritma no 6b
+    player.anims.play(`turn`); //algoritma no 6c
+    gameOver = true; //algoritma no 6d
   }
 }
