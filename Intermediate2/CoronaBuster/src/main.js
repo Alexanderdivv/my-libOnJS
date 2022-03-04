@@ -7,10 +7,13 @@ import Phaser from "phaser";
 // import CoronaBusterScene from "./scenes/CoronaBusterScene2";
 
 // Meeting 10
-// import CoronaBusterScene from "./scenes/CoronaBusterScene3";
+import CoronaBusterScene from "./scenes/CoronaBusterScene3";
 
 // Meeting 11
-import CoronaBusterScene from "./scenes/CoronaBusterScene4";
+// import CoronaBusterScene from "./scenes/CoronaBusterScene4";
+
+// Meeting 12
+// import CoronaBusterScene from "./scenes/CoronaBusterScene5";
 
 const config = {
   type: Phaser.AUTO,
