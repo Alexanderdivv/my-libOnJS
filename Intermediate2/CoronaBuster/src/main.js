@@ -16,7 +16,10 @@ import Phaser from "phaser";
 // import CoronaBusterScene from "./scenes/CoronaBusterScene5";
 
 // Meeting 13
-import CoronaBusterScene from "./scenes/CoronaBusterScene6";
+// import CoronaBusterScene from "./scenes/CoronaBusterScene6";
+// import GameOverScene from "./scenes/GameOverScene";
+
+import CoronaBusterScene from "./scenes/CoronaBusterScene7";
 import GameOverScene from "./scenes/GameOverScene";
 
 // Ayudia Checkpoint
