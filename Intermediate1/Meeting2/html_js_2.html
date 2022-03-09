@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Document</title>
-</head>
-<body>
-    <b>Menampilkan Nama: <br></b>
-    <input type="number" id="jumlah">
+  </head>
+  <body>
+    <b>Menampilkan Nama: <br /></b>
+    <input type="number" id="jumlah" />
     <!-- <input type="submit" onclick="sequence()"> -->
-    <input type="submit" id="submitForm">
+    <input type="submit" id="submitForm" />
 
     <!-- <script>
         function sequence(){
@@ -20,15 +20,15 @@
         }
     </script> -->
     <script>
-        var submit = document.getElementById("submitForm")
-        submit.addEventListener("click", ()=>{
-            var stop = Number(document.getElementById("jumlah").value)
-            for (let i = 0; i < stop; i++) {
-                document.write("Alexander Bangun")
-                document.write("<br>")
-            }
-            console.log(stop)
-        });
+      var submit = document.getElementById("submitForm");
+      submit.addEventListener("click", () => {
+        var stop = Number(document.getElementById("jumlah").value);
+        for (let i = 0; i < stop; i++) {
+          document.write("Alexander Bangun");
+          document.write("<br>");
+        }
+        console.log(stop);
+      });
     </script>
-</body>
+  </body>
 </html>
