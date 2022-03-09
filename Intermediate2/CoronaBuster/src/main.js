@@ -10,10 +10,14 @@ import Phaser from "phaser";
 // import CoronaBusterScene from "./scenes/CoronaBusterScene3";
 
 // Meeting 11
-import CoronaBusterScene from "./scenes/CoronaBusterScene4";
+// import CoronaBusterScene from "./scenes/CoronaBusterScene4";
 
 // Meeting 12
 // import CoronaBusterScene from "./scenes/CoronaBusterScene5";
+
+// Meeting 13
+import CoronaBusterScene from "./scenes/CoronaBusterScene6";
+import GameOverScene from "./scenes/GameOverScene";
 
 // Ayudia Checkpoint
 // import CoronaBusterScene from "./scenes/CoronaBusterAyudia";
@@ -29,7 +33,7 @@ const config = {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
-  scene: [CoronaBusterScene],
+  scene: [CoronaBusterScene, GameOverScene],
 };
 
 export default new Phaser.Game(config);
