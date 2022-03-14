@@ -1,10 +1,10 @@
 import Phaser from "phaser";
 
 // Meeting 4
-import BunnyJumpScene from "./scenes/BunnyJumpScene";
+// import BunnyJumpScene from "./scenes/BunnyJumpScene";
 
 // Meeting 5
-// import BunnyJumpScene from "./scenes/BunnyJumpScene2";
+import BunnyJumpScene from "./scenes/BunnyJumpScene2";
 
 // Meeting 6
 // import BunnyJumpScene from "./scenes/BunnyJumpScene3";
