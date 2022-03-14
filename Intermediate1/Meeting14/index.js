@@ -1,44 +1,32 @@
 // // membuat blueprint dengan function constructor
-// function Car(type, color) {
-//     this.type = type;
-//     this.color = color;
-//     this.display = function () {
-//         return this.color + " " + this.type
-//     }
-// }
+function Car(type, color) {
+  // property
+  this.type = type;
+  this.color = color;
+  // method
+  this.display = function () {
+    return this.color + " " + this.type;
+  };
+}
 
 // // membuat objek
-// var car1 = new Car("Tesla", "White")
-// var car2 = new Car("BMW", "Grey") //<- objek ke2
+var car1 = new Car("Tesla", "White");
+
+var car2 = new Car("BMW", "Grey"); //<- objek ke2
+
+console.log(car2.display());
 
 // // menampilkan
 // console.log(car2.display());
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // console.log(car1.breaks("cara breaks"));
-
 
 // this.breaks = function (breaks) {
 //     return breaks
 //  }
 // ---
 
-// membuat objek dengan Class 
+// membuat objek dengan Class
 // class Car{
 //     constructor (type, color){
 //         this.type = type
@@ -80,7 +68,6 @@
 // console.log(student4.display());
 // console.log(student5.display());
 
-
 // ---
 
 // var characters = {
@@ -93,8 +80,6 @@
 // }
 
 // console.log(characters);
-
-
 
 // var x = 10;
 // y = x + 2
