@@ -88,7 +88,7 @@ export default class BunnyJumpScene extends Phaser.Scene {
       const platformChild = child;
       const scrollY = this.cameras.main.scrollY;
       // @ts-ignore
-      if (platformChild.y >= scrollY + 700) {
+      if (platformChild.y >= scrollY + 600) {
         // @ts-ignore
         platformChild.y = scrollY - Phaser.Math.Between(0, 200);
         // @ts-ignore
