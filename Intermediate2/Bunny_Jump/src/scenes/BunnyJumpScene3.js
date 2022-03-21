@@ -71,7 +71,7 @@ export default class BunnyJumpScene extends Phaser.Scene {
     );
     this.carrotsCollected = 0;
     // menambahkan teks score
-    const style = { color: `#000`, fontSize: `24px` };
+    const style = { color: "#000", fontSize: `24px` };
     // mengubah nilai collected carrots
     this.carrotsCollectedText = this.add
       .text(240, 10, `Carrots: 0`, style)
@@ -110,9 +110,19 @@ export default class BunnyJumpScene extends Phaser.Scene {
     // melakukan iterasi pada semua child di platform
     this.platforms.children.iterate((child) => {
       const platformChild = child;
-      const scrollY = this.cameras.main.scrollY;
+      const scrollYY = this.cameras.main.scrollY;
+      const scrollY = this.cameras.main.worldView.y;
+      console.log("YY = ", scrollYY);
+      console.log("Y = ", scrollY);
+      //@ts-ignore
+      // if (
+      //   platformChild.y >= scrollY + 600 &&
+      //   platformChild.y <= scrollY + 650
+      // ) {
       if (platformChild.y >= scrollY + 700) {
-        platformChild.y = scrollY - Phaser.Math.Between(50, 100);
+        //@ts-ignore
+        platformChild.y = scrollY - Phaser.Math.Between(60, 100);
+        //@ts-ignore
         platformChild.body.updateFromGameObject();
 
         // panggil method carrot

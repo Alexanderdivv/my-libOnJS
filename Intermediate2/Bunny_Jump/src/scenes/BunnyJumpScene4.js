@@ -112,8 +112,12 @@ export default class BunnyJumpScene extends Phaser.Scene {
     this.platforms.children.iterate((child) => {
       const platformChild = child;
       const scrollY = this.cameras.main.scrollY;
+      //@ts-ignore
       if (platformChild.y >= scrollY + 700) {
-        platformChild.y = scrollY - Phaser.Math.Between(50, 100);
+        //@ts-ignore
+        platformChild.y = scrollY - Phaser.Math.Between(75, 90);
+        console.log(platformChild.y);
+        //@ts-ignore
         platformChild.body.updateFromGameObject();
 
         // panggil method carrot
@@ -123,15 +127,9 @@ export default class BunnyJumpScene extends Phaser.Scene {
     this.horizontalWrap(this.player);
 
     const buttomPlatform = this.findButtomMostPlatform();
+    //@ts-ignore
     if (this.player.y > buttomPlatform.y + 200) {
       this.scene.start(`game-over-scene`);
-    }
-
-    // memanggil sound jump
-    if (touchingDown) {
-      this.player.setVelocityY(-300);
-      this.player.setTexture("bunny_jump");
-      this.sound.play("jumpSound");
     }
   }
 
@@ -187,6 +185,7 @@ export default class BunnyJumpScene extends Phaser.Scene {
     // melakukan iterasi pada semua child dari platforms, untuk mencari buttom most platform
     for (let i = 1; i < platforms.length; i++) {
       const platform = platforms[i];
+      //@ts-ignore
       if (platform.y < buttomPlatforms.y) {
         continue;
       }
