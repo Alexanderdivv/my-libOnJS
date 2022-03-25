@@ -5,6 +5,9 @@ var carrotsCollected;
 var platforms;
 var player;
 var cursors;
+// inisialisai variabel untuk button berupa boolean
+var nav_left = false;
+var nav_right = false;
 export default class BunnyJumpScene extends Phaser.Scene {
   constructor() {
     super("bunny-jump-scene");
@@ -16,19 +19,22 @@ export default class BunnyJumpScene extends Phaser.Scene {
     this.load.image("bunny_jump", "images/bunny1_jump.png");
     this.load.image("bunny_stand", "images/bunny1_stand.png");
     this.load.audio("jumpSound", "sfx/phaseJump1.ogg");
+    // menambah button
+    this.load.image("right-btn", "images/right-btn.png");
+    this.load.image("left-btn", "images/left-btn.png");
   }
   create() {
     // membuat background tidak tertinggal di layar
-    this.add.image(240, 320, `background`).setScrollFactor(1, 0);
+    this.add.image(205, 360, `background`).setScrollFactor(1, 0);
     // atur deadzone dengan nilai lebar layout dikalikan 1.5
     this.cameras.main.setDeadzone(this.scale.width * 1.5);
     this.cursors = this.input.keyboard.createCursorKeys();
-    this.add.image(240, 320, "background");
+    this.add.image(205, 360, "background");
     // this.add.image(240, 320, "platform");
     this.platforms = this.physics.add.staticGroup();
 
     // menggandakan platform
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
       // x bernilai random dari 80-400
       const x = Phaser.Math.Between(80, 400);
       const y = 150 * i; //platform akan berjarak 150px
@@ -75,9 +81,11 @@ export default class BunnyJumpScene extends Phaser.Scene {
     const style = { color: `#000`, fontSize: `24px` };
     // mengubah nilai collected carrots
     this.carrotsCollectedText = this.add
-      .text(240, 10, `Carrots: 0`, style)
+      .text(270, 10, `Carrots: 0`, style)
       .setScrollFactor(0)
       .setOrigin(0.5, 0);
+
+    this.createButton();
   }
 
   update() {
@@ -87,14 +95,14 @@ export default class BunnyJumpScene extends Phaser.Scene {
     // kondisi jika player menyentuh bawah
     if (touchingDown) {
       // maka player akan meloncat dengan percepatan -300
-      this.player.setVelocityY(-300); //-300 karena keatas dan pertubahan animasi menjadi melompat
+      this.player.setVelocityY(-300); //-300 karena keatas dan perubahan animasi menjadi melompat
       this.player.setTexture("bunny_jump"); //mengubah texture menjadi melompat
     }
 
     // mengatur pergerakan player/bunny
-    if (this.cursors.left.isDown) {
+    if (this.cursors.left.isDown || this.nav_left) {
       this.player.setVelocityX(-200);
-    } else if (this.cursors.right.isDown) {
+    } else if (this.cursors.right.isDown || this.nav_right) {
       this.player.setVelocityX(200);
     } else {
       this.player.setVelocityX(0);
@@ -109,11 +117,16 @@ export default class BunnyJumpScene extends Phaser.Scene {
     }
 
     // melakukan iterasi pada semua child di platform
+
     this.platforms.children.iterate((child) => {
       const platformChild = child;
       const scrollY = this.cameras.main.scrollY;
-      if (platformChild.y >= scrollY + 700) {
-        platformChild.y = scrollY - Phaser.Math.Between(50, 100);
+      // @ts-ignore
+      if (platformChild.y >= scrollY + 970) {
+        // @ts-ignore
+        // platformChild.y = scrollY - Phaser.Math.Between(75, 90);
+        platformChild.y = scrollY + Phaser.Math.Between(5, 15);
+        // @ts-ignore
         platformChild.body.updateFromGameObject();
 
         // panggil method carrot
@@ -125,13 +138,6 @@ export default class BunnyJumpScene extends Phaser.Scene {
     const buttomPlatform = this.findButtomMostPlatform();
     if (this.player.y > buttomPlatform.y + 200) {
       this.scene.start(`game-over-scene`);
-    }
-
-    // memanggil sound jump
-    if (touchingDown) {
-      this.player.setVelocityY(-300);
-      this.player.setTexture("bunny_jump");
-      this.sound.play("jumpSound");
     }
   }
 
@@ -193,5 +199,51 @@ export default class BunnyJumpScene extends Phaser.Scene {
       buttomPlatforms = platform;
     }
     return buttomPlatforms;
+  }
+
+  // method untuk membuat button
+  createButton() {
+    this.input.addPointer(2);
+    let nav_left = this.add
+      .image(150, 880, "left-btn")
+      .setInteractive()
+      .setScrollFactor(0)
+      .setDepth(0.5)
+      .setAlpha(0.8);
+    let nav_right = this.add
+      .image(390, 880, "right-btn")
+      .setInteractive()
+      .setScrollFactor(0)
+      .setDepth(0.5)
+      .setAlpha(0.8);
+
+    nav_left.on(
+      "pointerdown",
+      () => {
+        this.nav_left = true;
+      },
+      this
+    );
+    nav_left.on(
+      "pointerup",
+      () => {
+        this.nav_left = false;
+      },
+      this
+    );
+    nav_right.on(
+      "pointerdown",
+      () => {
+        this.nav_right = true;
+      },
+      this
+    );
+    nav_right.on(
+      "pointerup",
+      () => {
+        this.nav_right = false;
+      },
+      this
+    );
   }
 }
