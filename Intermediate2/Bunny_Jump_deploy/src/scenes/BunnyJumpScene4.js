@@ -136,6 +136,7 @@ export default class BunnyJumpScene extends Phaser.Scene {
     this.horizontalWrap(this.player);
 
     const buttomPlatform = this.findButtomMostPlatform();
+    // @ts-ignore
     if (this.player.y > buttomPlatform.y + 200) {
       this.scene.start(`game-over-scene`);
     }
@@ -193,6 +194,7 @@ export default class BunnyJumpScene extends Phaser.Scene {
     // melakukan iterasi pada semua child dari platforms, untuk mencari buttom most platform
     for (let i = 1; i < platforms.length; i++) {
       const platform = platforms[i];
+      // @ts-ignore
       if (platform.y < buttomPlatforms.y) {
         continue;
       }

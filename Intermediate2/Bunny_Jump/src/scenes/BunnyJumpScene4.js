@@ -89,6 +89,7 @@ export default class BunnyJumpScene extends Phaser.Scene {
       // maka player akan meloncat dengan percepatan -300
       this.player.setVelocityY(-300); //-300 karena keatas dan pertubahan animasi menjadi melompat
       this.player.setTexture("bunny_jump"); //mengubah texture menjadi melompat
+      this.sound.play("jumpSound");
     }
 
     // mengatur pergerakan player/bunny
