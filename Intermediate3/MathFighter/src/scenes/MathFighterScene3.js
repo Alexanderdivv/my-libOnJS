@@ -323,7 +323,9 @@ export default class MathFighterScene extends Phaser.Scene {
 
     if (isNaN(value)) {
       if (value == "del") {
+        // console.log("delete");
         this.numberArray.pop(); // hapus item array terakhir
+        // console.log(this.numberArray);
         if (this.numberArray.length < 1) {
           this.numberArray[0] = 0; //nilai index 0 = 0
         }
@@ -351,6 +353,12 @@ export default class MathFighterScene extends Phaser.Scene {
       this.resultText.setX(this.gameHalfWidth - textHalfWidth);
       event.stopPropagation();
     }
+    // join gunanya untuk menyusun angka2 yang ada di array
+    this.number = parseInt(this.numberArray.join(""));
+    this.resultText.setText(String(this.number));
+    const textHalfWidth = this.resultText.width * 0.5;
+    this.resultText.setX(this.gameHalfWidth - textHalfWidth);
+    event.stopPropagation();
   }
 
   getOperator() {
