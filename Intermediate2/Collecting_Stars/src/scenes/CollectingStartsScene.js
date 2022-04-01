@@ -23,7 +23,6 @@ export default class CollectingStartScene extends Phaser.Scene {
   }
   create() {
     // membuat keyboardkursor
-    cursors = this.input.keyboard.createCursorKeys();
 
     this.add.image(400, 300, `sky`);
     // this.add.image(400, 300, `star`);
@@ -90,6 +89,8 @@ export default class CollectingStartScene extends Phaser.Scene {
     this.physics.add.collider(bombs, platforms);
     // algoritma no 6 saja, buat method hitBomb
     this.physics.add.collider(player, bombs, this.hitBomb, null, this);
+
+    cursors = this.input.keyboard.createCursorKeys();
   }
 
   // method collectStar dengan parameter player dan star
