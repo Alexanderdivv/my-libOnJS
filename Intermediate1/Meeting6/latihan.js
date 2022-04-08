@@ -41,22 +41,22 @@
 
 // counter();
 
-function magic() {
-  return function cacl(x) {
-    return x * 2;
-  };
-}
-
-var answer = magic();
-console.log(answer(1337));
-
-// var a = 10;
-// var b = 20;
-
-// // create function calculate a*b
-// function calculate() {
-//   c = a * b;
-//   return c;
+// function magic() {
+//   return function cacl(x) {
+//     return x * 2;
+//   };
 // }
-// calculate();
-// console.log(c);
+
+// var answer = magic();
+// console.log(answer(1337));
+
+var a = 10;
+var b = 5;
+
+// create function calculate a*b
+function calculate() {
+  c = a * b;
+  return c;
+}
+calculate();
+console.log(c);

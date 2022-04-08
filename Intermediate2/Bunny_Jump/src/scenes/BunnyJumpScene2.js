@@ -16,9 +16,7 @@ export default class BunnyJumpScene extends Phaser.Scene {
   create() {
     // membuat background tidak tertinggal di layar
     this.add.image(240, 320, `background`).setScrollFactor(1, 0);
-    // atur deadzone dengan nilai lebar layout dikalikan 1.5
-    this.cameras.main.setDeadzone(this.scale.width * 1.5);
-    this.cursors = this.input.keyboard.createCursorKeys();
+
     this.add.image(240, 320, "background");
     // this.add.image(240, 320, "platform");
     this.platforms = this.physics.add.staticGroup();
@@ -53,6 +51,9 @@ export default class BunnyJumpScene extends Phaser.Scene {
 
     // membuat kamera dapat mengikuti player/bunny keatas
     this.cameras.main.startFollow(this.player);
+    // atur deadzone dengan nilai lebar layout dikalikan 1.5
+    this.cameras.main.setDeadzone(this.scale.width * 1.5);
+    this.cursors = this.input.keyboard.createCursorKeys();
   }
 
   update() {
@@ -88,7 +89,7 @@ export default class BunnyJumpScene extends Phaser.Scene {
       const platformChild = child;
       const scrollY = this.cameras.main.scrollY;
       // @ts-ignore
-      if (platformChild.y >= scrollY + 600) {
+      if (platformChild.y >= scrollY + 300) {
         // @ts-ignore
         platformChild.y = scrollY - Phaser.Math.Between(0, 200);
         // @ts-ignore
