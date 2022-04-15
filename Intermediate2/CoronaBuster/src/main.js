@@ -4,10 +4,10 @@ import Phaser from "phaser";
 // import CoronaBusterScene from "./scenes/CoronaBusterScene";
 
 // Meeting 9
-import CoronaBusterScene from "./scenes/CoronaBusterScene2";
+// import CoronaBusterScene from "./scenes/CoronaBusterScene2";
 
 // Meeting 10
-// import CoronaBusterScene from "./scenes/CoronaBusterScene3";
+import CoronaBusterScene from "./scenes/CoronaBusterScene3";
 
 // Meeting 11
 // import CoronaBusterScene from "./scenes/CoronaBusterScene4";
