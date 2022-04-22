@@ -1,6 +1,6 @@
 import Phaser from "phaser";
 
-import MemoryGameScene from "./scenes/MemoryGameScenem8";
+import MemoryGameScene from "./scenes/MemoryGameScenem9";
 const config = {
   type: Phaser.AUTO,
   width: 720,
