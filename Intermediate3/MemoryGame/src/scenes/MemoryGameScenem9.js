@@ -387,6 +387,8 @@ export default class MemoryGameScene extends Phaser.Scene {
           })
           .setOrigin(0.5);
         this.countdownTimer = undefined;
+        // hide countdown
+        this.timerLabel.setVisible(false);
       }
     });
   }
@@ -400,6 +402,8 @@ export default class MemoryGameScene extends Phaser.Scene {
         })
         .setOrigin(0.5);
       this.countdownTimer = undefined;
+      // hiding countdown
+      this.timerLabel.setVisible(false);
       this.player.active = false;
       this.player.setVelocity(0, 0);
     }
