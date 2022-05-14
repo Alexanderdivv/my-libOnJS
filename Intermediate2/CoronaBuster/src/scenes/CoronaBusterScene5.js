@@ -96,7 +96,7 @@ export default class CoronaBusterScene extends Phaser.Scene {
       this
     );
 
-    this.scoreLabel = this.createScoreLabel(16, 16, 0);
+    this.scoreLabel = this.createScoreLabel(16, 16, 10);
   }
 
   update(time) {
