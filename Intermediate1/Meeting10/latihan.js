@@ -7,24 +7,18 @@
 // ---pemisah---
 
 // memeriksa tipe data
-// score = 100;
-// console.log("Tipe Score, " + typeof score);
-// score = "100";
-// console.log("Tipe Score, " + typeof score);
-// score = parseFloat(score);
-// console.log("Tipe Score, " + typeof score);
-// score = String(score);
-// console.log("Tipe Score, " + typeof score);
+score = 12.5554445;
+console.log("Tipe Score 1, " + typeof score);
 
 // ---pemisah---
 
 // exponents
 // console.log("Score is, " + 2 ** 10);
 
-var score = 39;
-console.log(typeof score);
+// var score = 39;
+// console.log(typeof score);
 
-score = String(score);
-console.log(typeof score);
-a++;
-a = a + 1;
+// score = String(score);
+// console.log(typeof score);
+// a++;
+// a = a + 1;
