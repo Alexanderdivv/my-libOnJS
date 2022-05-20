@@ -66,6 +66,7 @@ export default class CoronaBusterScene extends Phaser.Scene {
 
   create() {
     const gameWidth = this.scale.width * 0.5;
+
     const gameHeight = this.scale.height * 0.5;
     this.add.image(gameWidth, gameHeight, `background`);
     this.clouds = this.physics.add.group({
@@ -145,7 +146,7 @@ export default class CoronaBusterScene extends Phaser.Scene {
       this
     );
 
-    this.backsound = this.sound.add(`backsound`);
+    this.backsound = this.sound.add(`backsound`, { volume: 0.02 });
     var soundConfig = {
       loop: true,
     };
