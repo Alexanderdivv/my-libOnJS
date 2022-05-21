@@ -1,6 +1,6 @@
 import Phaser from "phaser";
 
-import HelloWorldScene from "./scenes/HelloWorldScene";
+import AleBrosScene from "./scenes/AleBrosScene";
 
 const config = {
   type: Phaser.AUTO,
@@ -20,7 +20,7 @@ const config = {
     // autoCenter: Phaser.Scale.CENTER_BOTH,
     autoCenter: Phaser.Scale.NO_CENTER,
   },
-  scene: [HelloWorldScene],
+  scene: [AleBrosScene],
 };
 
 export default new Phaser.Game(config);

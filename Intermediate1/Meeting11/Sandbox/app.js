@@ -1,5 +1,5 @@
-let fruit = ["apple", "banana", "dragonfruit", "pineapple", "mango"]
-document.write(fruit)
+let fruit = ["apple", "banana", "dragonfruit", "pineapple", "mango"];
+document.write(fruit);
 
 // document.write("<br> --------------- <br>")
 
