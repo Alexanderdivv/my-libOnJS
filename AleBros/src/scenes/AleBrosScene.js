@@ -53,8 +53,7 @@ export default class AleBrosScene extends Phaser.Scene {
       key: "left",
       frames: this.anims.generateFrameNumbers("dude", { start: 9, end: 10 }),
       frameRate: 10,
-      repeat: -1, //mengulangu animasi (loop)
-      // mirror
+      repeat: -1,
     });
     this.anims.create({
       key: "turn",
@@ -65,7 +64,7 @@ export default class AleBrosScene extends Phaser.Scene {
       key: "right",
       frames: this.anims.generateFrameNumbers("dude", { start: 9, end: 10 }),
       frameRate: 10,
-      repeat: -1, //mengulangu animasi (loop)
+      repeat: -1,
     });
     player.anims.play("turn");
 

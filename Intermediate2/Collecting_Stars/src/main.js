@@ -1,19 +1,19 @@
-import Phaser from 'phaser'
+import Phaser from "phaser";
 // import HelloWorldScene from './scenes/HelloWorldScene'
-import CollectingStartScene from './scenes/CollectingStartsScene'
+import CollectingStartScene from "./scenes/CollectingStartsScene";
 
 const config = {
-	type: Phaser.AUTO,
-	width: 800,
-	height: 600,
-	physics: {
-		default: 'arcade',
-		arcade: {
-			gravity: { y: 200 }
-		}
-	},
-	// scene: [HelloWorldScene]
-	scene: [CollectingStartScene]
-}
+  type: Phaser.AUTO,
+  width: 800,
+  height: 600,
+  physics: {
+    default: "arcade",
+    arcade: {
+      gravity: { y: 200 },
+    },
+  },
+  // scene: [HelloWorldScene]
+  scene: [CollectingStartScene],
+};
 
-export default new Phaser.Game(config)
+export default new Phaser.Game(config);
