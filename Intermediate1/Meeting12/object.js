@@ -1,11 +1,9 @@
-var car = {
-  // properties
-  //name : //value
-  type: "Tesla",
-  model: "Model 3",
-  color: "White",
+// Variabel global
+var nama = "Alex";
 
-  // method
-};
+function hello() {
+  var nama = "Budi";
+  console.log(nama);
+}
 
-console.log(car["type"]);
+hello();

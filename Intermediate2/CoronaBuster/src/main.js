@@ -16,12 +16,12 @@ import Phaser from "phaser";
 // import CoronaBusterScene from "./scenes/CoronaBusterScene5";
 
 // Meeting 13
-import CoronaBusterScene from "./scenes/CoronaBusterScene6";
-import GameOverScene from "./scenes/GameOverScene";
+// import CoronaBusterScene from "./scenes/CoronaBusterScene6";
+// import GameOverScene from "./scenes/GameOverScene";
 
 // Meeting 14
-// import CoronaBusterScene from "./scenes/CoronaBusterScene7";
-// import GameOverScene from "./scenes/GameOverScene";
+import CoronaBusterScene from "./scenes/CoronaBusterScene7";
+import GameOverScene from "./scenes/GameOverScene";
 
 // update enemy collaps saat bersentuhan dengan bottom frame
 // import CoronaBusterScene from "./scenes/CoronaBusterSceneUpdate";
