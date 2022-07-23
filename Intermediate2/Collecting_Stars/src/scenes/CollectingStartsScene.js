@@ -11,6 +11,7 @@ export default class CollectingStartScene extends Phaser.Scene {
   constructor() {
     super(`collecting-starts-scene`);
   }
+
   preload() {
     this.load.image(`ground`, "images/platform.png");
     this.load.image(`sky`, `images/sky.png`);
@@ -21,6 +22,7 @@ export default class CollectingStartScene extends Phaser.Scene {
       frameHeight: 48,
     });
   }
+
   create() {
     // membuat keyboardkursor
 
