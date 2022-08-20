@@ -68,7 +68,7 @@ export default class BunnyJumpScene extends Phaser.Scene {
     }
 
     // mengatur pergerakan player/bunny
-    if (this.cursors.left.isDown) {
+    if (this.cursors.left.isDown && !touchingDown) {
       this.player.setVelocityX(-200);
     } else if (this.cursors.right.isDown) {
       this.player.setVelocityX(200);
@@ -89,7 +89,7 @@ export default class BunnyJumpScene extends Phaser.Scene {
       const platformChild = child;
       const scrollY = this.cameras.main.scrollY;
       // @ts-ignore
-      if (platformChild.y >= scrollY + 300) {
+      if (platformChild.y >= scrollY + 700) {
         // @ts-ignore
         platformChild.y = scrollY - Phaser.Math.Between(0, 200);
         // @ts-ignore
