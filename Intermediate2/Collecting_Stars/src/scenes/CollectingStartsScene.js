@@ -38,6 +38,7 @@ export default class CollectingStartScene extends Phaser.Scene {
     player = this.physics.add.sprite(100, 450, `dude`);
     player.setCollideWorldBounds(true);
     player.setBounce(0.2);
+    this.physics.add.collider(player, platforms);
 
     // membuat bintang
     stars = this.physics.add.group({
@@ -48,7 +49,6 @@ export default class CollectingStartScene extends Phaser.Scene {
     });
 
     // Meeting 3 membuat collode antara player dan platform
-    this.physics.add.collider(player, platforms);
 
     // membuat starts collide dengan platform
     this.physics.add.collider(stars, platforms);
