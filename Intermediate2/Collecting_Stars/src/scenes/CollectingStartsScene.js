@@ -160,6 +160,15 @@ export default class CollectingStartScene extends Phaser.Scene {
       null, //proses callback yang tidak dibutuhkan
       this // memastikan overlap pada scene ini
     );
+
+    // kondisi menang
+    if (score >= 100) {
+      this.physics.pause();
+      this.add.text(300, 300, "You Win", {
+        fontSize: "48px",
+        color: "yellow",
+      });
+    }
   }
 
   hitBomb(player, bomb) {
@@ -168,5 +177,9 @@ export default class CollectingStartScene extends Phaser.Scene {
     player.setTint(0xff0000); //algoritma no 6b
     player.anims.play(`turn`); //algoritma no 6c
     gameOver = true; //algoritma no 6d
+    this.add.text(300, 300, "Game Over", {
+      fontSize: "48px",
+      color: "yellow",
+    });
   }
 }

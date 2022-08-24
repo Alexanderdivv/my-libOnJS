@@ -17,3 +17,9 @@
 // }
 // var answer = magic();
 // console.log(answer(1337));
+
+// latihan return function
+function testReturn(param1) {
+  //   return param1;
+}
+console.log(testReturn());
