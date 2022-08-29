@@ -74,7 +74,7 @@ export default class BunnyJumpScene extends Phaser.Scene {
     const style = { color: "#000", fontSize: `24px` };
     // mengubah nilai collected carrots
     this.carrotsCollectedText = this.add
-      .text(240, 10, `Carrots: 0`, style)
+      .text(240, 10, "Carrots: 0", style)
       .setScrollFactor(0)
       .setOrigin(0.5, 0);
   }
