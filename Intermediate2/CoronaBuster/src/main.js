@@ -1,10 +1,10 @@
 import Phaser from "phaser";
 
 // Meeting8
-import CoronaBusterScene from "./scenes/CoronaBusterScene";
+// import CoronaBusterScene from "./scenes/CoronaBusterScene";
 
 // Meeting 9
-// import CoronaBusterScene from "./scenes/CoronaBusterScene2";
+import CoronaBusterScene from "./scenes/CoronaBusterScene2";
 
 // Meeting 10
 // import CoronaBusterScene from "./scenes/CoronaBusterScene3";
