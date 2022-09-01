@@ -126,3 +126,69 @@ td {
   height: 30px;
   padding: 10px;
 }
+
+.main-header {
+  background-color: rgb(245, 235, 220);
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.header-info {
+  text-align: left;
+}
+
+.header-info a {
+  padding: 0;
+  text-decoration: none;
+  color: rgb(247, 48, 48);
+}
+
+.header-info a:hover {
+  background-color: rgba(92, 92, 92, 0.932);
+}
+
+footer {
+  background-color: rgb(245, 235, 220);
+}
+
+.main-footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.left-footer {
+  margin-right: auto;
+  margin-left: 40px;
+}
+
+.right-footer {
+  margin-left: auto;
+  margin-right: 40px;
+}
+
+.center-footer {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.info-left {
+  color: rgb(219, 84, 75);
+  text-align: left;
+  width: 100%;
+}
+
+.info-right {
+  color: rgb(219, 84, 75);
+  text-align: right;
+  width: 100%;
+}
+
+.info-center {
+  color: rgb(219, 84, 75);
+  text-align: center;
+  width: 100%;
+  padding-left: 50px;
+  border-top: 1px solid rgb(146, 168, 133);
+}
