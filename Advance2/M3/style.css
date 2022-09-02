@@ -142,6 +142,11 @@ td {
 
 .header-info {
   text-align: left;
+  color: rgb(219, 84, 75);
+  padding: 0px;
+  margin: 14px;
+  position: absolute;
+  left: 0px;
 }
 
 .header-info a {
