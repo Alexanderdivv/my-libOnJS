@@ -66,14 +66,19 @@ export default class CoronaBusterScene extends Phaser.Scene {
     });
   }
 
+  // @ts-ignore
   update(time) {
     //   membuat awan bergerak
     this.clouds.children.iterate((child) => {
       // arah gerak awan ke bawah
+      // @ts-ignore
       child.setVelocityY(50);
 
+      // @ts-ignore
       if (child.y > this.scale.height) {
+        // @ts-ignore
         child.x = Phaser.Math.Between(10, 400);
+        // @ts-ignore
         child.y = child.displayHeight * -1;
       }
     });
@@ -170,6 +175,7 @@ export default class CoronaBusterScene extends Phaser.Scene {
   }
 
   // membuat ship dapat bergerak
+  // @ts-ignore
   movePlayer(player) {
     if (this.nav_left || this.cursor.left.isDown) {
       this.player.setVelocityX(this.speed * -1);
@@ -200,6 +206,7 @@ export default class CoronaBusterScene extends Phaser.Scene {
       rotation: 0.06,
     };
 
+    // @ts-ignore
     const enemy = this.enemies.get(0, 0, `enemy`, config);
     const enemyWidth = enemy.displayWidth;
     const positionX = Phaser.Math.Between(

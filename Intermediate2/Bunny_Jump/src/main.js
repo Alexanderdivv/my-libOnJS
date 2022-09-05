@@ -4,14 +4,14 @@ import Phaser from "phaser";
 // import BunnyJumpScene from "./scenes/BunnyJumpScene";
 
 // Meeting 5
-import BunnyJumpScene from "./scenes/BunnyJumpScene2";
+// import BunnyJumpScene from "./scenes/BunnyJumpScene2";
 
 // Meeting 6
 // import BunnyJumpScene from "./scenes/BunnyJumpScene3";
 
 // Meeting 7
-// import BunnyJumpScene from "./scenes/BunnyJumpScene4";
-// import GameOverScene from "./scenes/GameOverScene";
+import BunnyJumpScene from "./scenes/BunnyJumpScene4";
+import GameOverScene from "./scenes/GameOverScene";
 
 // Finish
 // import BunnyJumpScene from "./scenes/BunnyJumpSceneG";
@@ -26,7 +26,7 @@ const config = {
       gravity: { y: 200 },
     },
   },
-  scene: [BunnyJumpScene],
+  scene: [BunnyJumpScene, GameOverScene],
   // scene: [BunnyJumpScene],
 };
 

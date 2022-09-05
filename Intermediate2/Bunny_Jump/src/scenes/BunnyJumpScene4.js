@@ -192,6 +192,7 @@ export default class BunnyJumpScene extends Phaser.Scene {
       }
       buttomPlatforms = platform;
     }
+    // this.add.image(buttomPlatforms.x, buttomPlatforms.y, `platform`);
     return buttomPlatforms;
   }
 }

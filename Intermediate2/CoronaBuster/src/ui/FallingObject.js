@@ -9,8 +9,8 @@ export default class FallingObject extends Phaser.Physics.Arcade.Sprite {
   }
   // memunculkan objek enemy
   spawn(x) {
-    const positionY = Phaser.Math.Between(-50, -70);
-    this.setPosition(x, positionY);
+    // const positionY = Phaser.Math.Between(-50, -70);
+    this.setPosition(x, -10);
 
     this.setActive(true);
     this.setVisible(true);

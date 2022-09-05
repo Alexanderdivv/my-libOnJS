@@ -1,0 +1,6 @@
+.content {
+  position: sticky;
+  border: 2px solid red;
+  right: 0;
+  top: 100px;
+}
