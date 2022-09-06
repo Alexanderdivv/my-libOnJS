@@ -6,7 +6,7 @@ import Phaser from "phaser";
 // Meeting 9
 // import CoronaBusterScene from "./scenes/CoronaBusterScene2";
 
-// Meeting 10 / meeting 10 (game dev)
+// Meeting 10 / meeting 9 (game dev)
 import CoronaBusterScene from "./scenes/CoronaBusterScene3";
 
 // Meeting 11
