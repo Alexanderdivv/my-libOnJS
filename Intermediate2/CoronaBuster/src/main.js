@@ -7,7 +7,7 @@ import Phaser from "phaser";
 // import CoronaBusterScene from "./scenes/CoronaBusterScene2";
 
 // Meeting 10 / meeting 9 (game dev)
-import CoronaBusterScene from "./scenes/CoronaBusterScene3";
+// import CoronaBusterScene from "./scenes/CoronaBusterScene3";
 
 // Meeting 11
 // import CoronaBusterScene from "./scenes/CoronaBusterScene4";
@@ -20,8 +20,8 @@ import CoronaBusterScene from "./scenes/CoronaBusterScene3";
 // import GameOverScene from "./scenes/GameOverScene";
 
 // Meeting 14
-// import CoronaBusterScene from "./scenes/CoronaBusterScene7";
-// import GameOverScene from "./scenes/GameOverScene";
+import CoronaBusterScene from "./scenes/CoronaBusterScene7";
+import GameOverScene from "./scenes/GameOverScene";
 
 // update enemy collaps saat bersentuhan dengan bottom frame
 // import CoronaBusterScene from "./scenes/CoronaBusterSceneUpdate";
@@ -41,7 +41,7 @@ const config = {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
-  scene: [CoronaBusterScene],
+  scene: [CoronaBusterScene, GameOverScene],
 };
 
 export default new Phaser.Game(config);
