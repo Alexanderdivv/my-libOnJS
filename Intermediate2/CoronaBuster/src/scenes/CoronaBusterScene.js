@@ -48,8 +48,8 @@ export default class CoronaBusterScene extends Phaser.Scene {
     let shoot = this.add
       .image(320, 550, `shoot-btn`)
       .setInteractive()
-      .setDepth(0.5)
-      .setAlpha(0.8);
+      .setDepth(0.5);
+    // .setAlpha(0.8);
     let nav_left = this.add
       .image(50, 550, `left-btn`)
       .setInteractive()
