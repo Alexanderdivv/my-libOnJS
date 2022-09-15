@@ -7,7 +7,7 @@
 body {
   background-image: url("../M3/assets/bg.jpg");
   background-size: cover;
-  margin-top: 10px;
+  margin-top: 10%;
 }
 
 /* section.cover {
@@ -318,4 +318,41 @@ button:hover {
 .fa-address-book {
   margin: 6px;
   color: rgb(219, 84, 75);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-content {
+  display: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  position: absolute;
+  top: 100%;
+  background-color: antiquewhite;
+}
+
+.dropdown-item:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+a.dropdown-item {
+  min-width: 160px;
+  text-align: left;
+}
+
+li.dropdown-item:hover a.dropdown-item {
+  text-align: center;
+  color: gainsboro;
 }
