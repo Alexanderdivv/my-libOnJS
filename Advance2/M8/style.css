@@ -1,0 +1,192 @@
+body {
+  margin: 10% 0 0 0;
+  padding: 0;
+}
+
+/* buat style untuk Header disini*/
+header {
+  background-color: rgb(149, 243, 186);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  /* gap: 10px; */
+}
+
+a {
+  text-decoration: none;
+  margin: 0 7px;
+  /* padding: 10px; */
+  color: black;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-content {
+  display: none;
+}
+/* tambahan sendiri */
+li.dropdown-item {
+  margin: 10px 0;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+  position: absolute;
+  top: 100%;
+  background-color: whitesmoke;
+}
+
+.dropdown-item:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+a.dropdown-item {
+  min-width: 160px;
+  text-align: left;
+}
+
+li.dropdown-item:hover a.dropdown-item {
+  text-align: left;
+  color: gainsboro;
+}
+
+h3.price {
+  text-align: center;
+  font-size: 30px;
+}
+
+.list li {
+  list-style-type: disc;
+  padding: 5px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab {
+  background-color: white;
+  width: 250px;
+  min-height: 500px;
+  padding: 60px;
+  margin: 10px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px grey;
+}
+
+.home {
+  display: block;
+  text-align: center;
+}
+
+.home h1 {
+  font-size: 30px;
+}
+
+h1.name {
+  font-size: 27px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: black;
+  text-align: center;
+}
+
+h2.price {
+  font-size: 30px;
+  color: black;
+  text-align: center;
+}
+
+div.about {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  background-color: rgba(204, 198, 198, 0.568);
+  width: 80%;
+}
+
+.about {
+  text-align: left;
+  color: black;
+  padding: 10px;
+  width: 100%;
+}
+
+img.about-us {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+div.image-about {
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+/* buat style untuk button disini */
+button {
+  background-color: rgb(149, 243, 186);
+  border-radius: 5px;
+  padding: 5px 13px;
+  border: none;
+  font-size: 13pt;
+  margin: 50px auto;
+  display: block;
+}
+
+/* button hover (bonus)*/
+button:hover {
+  transform: scale(1.2, 1.2);
+  background-color: brown;
+}
+
+/* buat style untuk footer disini*/
+footer {
+  background-color: rgb(149, 243, 186);
+}
+
+.center-footer {
+  margin: 0 20px;
+}
+
+.main-footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.left-footer {
+  margin-right: auto;
+  margin-left: 40px;
+  width: 100%;
+}
+
+.right-footer {
+  margin-left: auto;
+  margin-right: 40px;
+  text-align: right;
+  width: 100%;
+}
