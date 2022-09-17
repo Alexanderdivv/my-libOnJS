@@ -5,10 +5,12 @@ var tasks = [];
 function addTask() {
   // get the task from the input
   var task = document.getElementById("input").value;
-  // add the task to the list
-  tasks.push(task);
-  // update the list
-  updateList();
+  if (task != "") {
+    // add the task to the list
+    tasks.push(task);
+    // update the list
+    updateList();
+  }
 }
 
 function updateList() {
@@ -22,7 +24,7 @@ function updateList() {
       "</div>" +
       "<button id='list' onclick='deleteTask(" +
       i +
-      ")'>Del</button>" +
+      ")'><i class='fa-solid fa-trash'></i></button>" +
       "<button id='list' onclick='updateTask(" +
       i +
       ")'>Up</button>" +
