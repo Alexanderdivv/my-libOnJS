@@ -2,9 +2,17 @@
   background-color: #f1f1f1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 70vh;
+  width: 30vw;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 15px;
+}
+
+.form {
+  display: flex;
+  width: 80%;
 }
 
 input {
@@ -15,6 +23,8 @@ input {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  /* item size 80 */
+  flex: 0 0 80%;
 }
 
 button {
