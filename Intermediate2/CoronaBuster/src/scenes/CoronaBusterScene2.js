@@ -129,12 +129,12 @@ export default class CoronaBusterScene extends Phaser.Scene {
       this.player.setVelocityX(this.speed * -1);
       this.player.anims.play(`left`, true);
       this.player.setFlipX(false);
-      this.sound.play("turn");
+      // this.sound.play("turn");
     } else if (this.nav_right || this.cursor.right.isDown) {
       this.player.setVelocityX(this.speed);
       this.player.anims.play(`right`, true);
       this.player.setFlipX(true);
-      this.sound.play("turn");
+      // this.sound.play("turn");
     } else if (this.cursor.up.isDown) {
       this.player.setVelocityY(this.speed * -1);
       this.player.anims.play(`turn`, true);
@@ -146,6 +146,7 @@ export default class CoronaBusterScene extends Phaser.Scene {
       this.player.setVelocityY(0);
       this.player.anims.play(`turn`);
     }
+    this.sound.play("turn");
   }
 
   createPlayer() {

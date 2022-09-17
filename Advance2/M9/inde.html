@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <!-- call css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2 class="red">Hello Programmer!</h2>
+    <p>I am Batman</p>
+
+    <ul id="lang">
+      <li>Satu</li>
+      <li>Dua</li>
+      <li>Tiga</li>
+    </ul>
+  </body>
+  <script>
+    // var result = (document.getElementsByTagName("p")[0].className = "blue");
+    // document.getElementsByClassName("red")[0].className = "blue";
+    // console.log(result);
+
+    // document.getElementsByTagName("p")[0].style.color = "red";
+    // document.getElementsByClassName("red")[0].style.color = "blue";
+    // document.getElementsByClassName("red")[0].style.fontSize = "50px";
+
+    // document.getElementsByTagName("p")[0].setAttribute("id", "red");
+
+    // var paragraph = document.createElement("h3");
+    // paragraph.innerHTML = "ya kali ga kuy";
+
+    // document.body.removeChild(paragraph);
+
+    const list = document.getElementById("lang");
+    // remove list
+    list.removeChild(list.children[2]);
+  </script>
+</html>
