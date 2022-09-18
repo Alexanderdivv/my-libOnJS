@@ -11,6 +11,8 @@ function addTask() {
     // update the list
     updateList();
   }
+  // clear the input
+  document.getElementById("input").value = "";
 }
 
 function updateList() {
@@ -43,9 +45,21 @@ function deleteTask(i) {
 }
 
 function updateTask(i) {
+  // create input to update the task
+  var text =
+    "<div class='form2'><input type='text' id='input2' value='" +
+    tasks[i] +
+    "'><button id='add2' onclick='saveTask(" +
+    i +
+    ")'>Save</button></div>";
+  // update the list
+  document.getElementById("list").innerHTML = text;
+}
+
+function saveTask(i) {
   // get the task from the input
-  var task = document.getElementById("input").value;
-  // add the task to the list
+  var task = document.getElementById("input2").value;
+  // update the task in the list
   tasks[i] = task;
   // update the list
   updateList();
