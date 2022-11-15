@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/1ba09beaeb.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="main-header">
+        <div class="header-info">
+          <img
+            src="../../M9/blog/assets/header-icon.png"
+            alt="logo"
+            id="logo"
+          />
+          Cobee The Coders
+        </div>
+        <nav class="dropdown">
+          <div>
+            <a href="#">Project</a>
+            <a href="#">Contact</a>
+            <a href="#">About Us</a>
+          </div>
+        </nav>
+      </div>
+      <section id="jumbotron">
+        <div class="jumbotron">
+          <h1
+            class="jumbotron-title"
+            onmouseover="changeMiniText(this)"
+            onmouseout="changeMiniTextBack(this)"
+          >
+            Dapatkan Tips Programming Disini!
+          </h1>
+          <div class="header-flex">
+            <div>
+              <h2 class="jumbotron-text">
+                Baru di diunia Programming? <br />
+                Belajar lewat pengembangan
+                <span style="color: #f4a261">Game dan Web</span> sederhana!
+              </h2>
+              <div class="mini-text-flex">
+                <p class="mini-text">Belajar programming dasar Disini</p>
+                <button id="icon-up" onclick="changeText()">
+                  <i class="far fa-hand-point-up"> </i>
+                </button>
+                <button id="icon-down" class="icon-down">
+                  <p class="mini-text"></p>
+                  <i class="far fa-hand-point-down"> </i>
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <img
+                onmouseover="changeImage(this)"
+                onmouseout="changeImageBack(this)"
+                class="jumbotron-img"
+                src="../../M9/blog/assets/img-header.png"
+                alt="Jumbotron Image"
+                width="550"
+                height="300"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <div class="main-content">
+        <aside>
+          <!-- div class= profile -->
+          <div>
+            <h3 class="aside-title">It's Cobee</h3>
+            <img
+              class="profile-picture"
+              src="../../M9/blog/assets/cobee.png"
+              alt="Cobee"
+              width="150px"
+              height="auto"
+            />
+            <div class="toggle">
+              <button class="btn" id="green">
+                <i class="fa fa-thumbs-up fa-lg"></i>
+              </button>
+              <button class="btn" id="red">
+                <i class="fa fa-thumbs-down fa-lg"></i>
+              </button>
+            </div>
+          </div>
+          <div class="search-tags-container"> 
+            <div class="input-tag"> <h3 class="aside-title">Search Here</h3> 
+              <input id="myInput" type="text" placeholder="Search..."> 
+              <span class="addBtn" onclick="newElement()"> Search</span>
+          </div>
+          <ul id="myUL" class="search-tags-list"> 
+            <li class="search-tags-item">HTML</li> 
+            <li class="search-tags-item">Code</li>
+          </ul>
+          </div>
+        </aside>
+
+        <div class="content">
+          <!-- m13 -->
+        <article id="my-project">
+          <h3 class="article-title">My Project</h3>
+          <div class="project-container">
+            <div class="project">
+              <img src="../../M9/blog/assets/game1.png" alt="" width="300px" height="210px">
+              <h4 class="project-title">Collecting Star</h4>
+              <p class="project-description">Game Collecting Star menggunakan Phaser</p>
+            </div>
+            <div class="project">
+              <img src="../../M9/blog/assets/game1.png" alt="" width="300px" height="210px">
+              <h4 class="project-title">Pong Game</h4>
+              <p class="project-description">Game Pong menggunakan platform Scratch</p>
+          </div>
+        </article>
+          <article id="video">
+            <div class="item-video">
+              <h3 class="article-title">What is Coding?</h3>
+              <!-- tambahkan video youtube 1 disini -->
+              <iframe
+                width="500"
+                height="350"
+                src="https://www.youtube.com/embed/XMZFUnAgOqs"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+              <h3 class="article-title">Coding is Not Difficult!</h3>
+              <!-- tambahkan video youtube 2 disini -->
+              <iframe
+                width="500"
+                height="350"
+                src="https://www.youtube.com/embed/hb7Q33ysCwI"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </article>
+
+          <article id="maps">
+            <div class="maps">
+              <!-- gunakan iframe dari alamat rumahmu -->
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1016960.0717492943!2d104.27738829999998!3d-5.340324599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40c3b68bb36a57%3A0x39460f8b45efdd23!2sPerumahan%20jati%20indah%20permai%201!5e0!3m2!1sen!2sid!4v1664528562051!5m2!1sen!2sid"
+                width="500"
+                height="350"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </article>
+
+          
+        </div>
+
+        
+      </div>
+    </main>
+
+    <footer>
+      <div class="main-footer">
+        <h3 class="info-top">Cobee The Junior Programmer</h3>
+        <div class="social-media">
+          <i class="fab fa-instagram-square"></i>
+          <i class="fab fa-twitter-square"></i>
+          <i class="fab fa-facebook-square"></i>
+          <i class="fas fa-envelope"></i>
+        </div>
+        <p class="info-center">
+          Copyright &copy; 2021.Cobee. All right reserved
+        </p>
+      </div>
+    </footer>
+  </body>
+  <script src="script.js"></script>
+</html>

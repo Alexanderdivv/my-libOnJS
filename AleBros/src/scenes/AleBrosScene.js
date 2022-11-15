@@ -17,6 +17,12 @@ export default class AleBrosScene extends Phaser.Scene {
       frameWidth: 80,
       frameHeight: 110,
     });
+
+    // load 2nd player
+    this.load.spritesheet("dude2", "images/Attack1.png", {
+      frameWidth: 100,
+      frameHeight: 62,
+    });
   }
 
   create() {
@@ -25,8 +31,9 @@ export default class AleBrosScene extends Phaser.Scene {
     this.platform = this.physics.add.staticGroup();
     this.platform.create(600, 550, "platform").setScale(2).refreshBody();
     this.player = this.createAnimation();
-
+    this.player2 = this.createAnimation2();
     this.physics.add.collider(this.player, this.platform);
+    this.physics.add.collider(this.player2, this.platform);
   }
 
   update() {
@@ -42,6 +49,13 @@ export default class AleBrosScene extends Phaser.Scene {
     } else {
       this.player.setVelocityX(0);
       this.player.anims.play("turn");
+    }
+
+    // button for player 2
+    if (this.cursors.space.isDown) {
+      this.player2.anims.play("attack", true);
+    } else {
+      this.player2.anims.play("turn2");
     }
   }
 
@@ -66,7 +80,30 @@ export default class AleBrosScene extends Phaser.Scene {
       frameRate: 10,
       repeat: -1,
     });
+
     player.anims.play("turn");
+
+    return player;
+  }
+
+  createAnimation2() {
+    const player = this.physics.add.sprite(800, 450, "dude2");
+    player.setCollideWorldBounds(true);
+    player.setBounce(0.2);
+
+    this.anims.create({
+      key: "turn2",
+      frames: [{ key: "dude2", frame: 0 }],
+      frameRate: 20,
+    });
+    this.anims.create({
+      key: "attack",
+      frames: this.anims.generateFrameNumbers("dude2", { start: 1, end: 3 }),
+      frameRate: 10,
+      repeat: 0,
+    });
+
+    player.anims.play("turn2");
 
     return player;
   }

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/1ba09beaeb.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="main-header">
+        <div class="header-info">
+          <img
+            src="../../../Advance2/M9/blog/assets/header-icon.png"
+            alt="logo"
+            id="logo"
+          />
+          Cobee The Coders
+        </div>
+        <nav class="dropdown">
+          <div>
+            <a href="#">Project</a>
+            <a href="#">Contact</a>
+            <a href="#">About Us</a>
+          </div>
+        </nav>
+      </div>
+      <section id="jumbotron">
+        <div class="jumbotron">
+          <h1
+            class="jumbotron-title"
+            onmouseover="changeMiniText(this)"
+            onmouseout="changeMiniTextBack(this)"
+          >
+            Dapatkan Tips Programming Disini!
+          </h1>
+          <div class="header-flex">
+            <div>
+              <h2 class="jumbotron-text">
+                Baru di diunia Programming? <br />
+                Belajar lewat pengembangan
+                <span style="color: #f4a261">Game dan Web</span> sederhana!
+              </h2>
+              <div class="mini-text-flex">
+                <p class="mini-text">Belajar programming dasar Disini</p>
+                <button id="icon-up" onclick="changeText()">
+                  <i class="far fa-hand-point-up"> </i>
+                </button>
+                <button id="icon-down" class="icon-down">
+                  <p class="mini-text"></p>
+                  <i class="far fa-hand-point-down"> </i>
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <img
+                onmouseover="changeImage(this)"
+                onmouseout="changeImageBack(this)"
+                class="jumbotron-img"
+                src="../../../Advance2/M9/blog/assets/img-header.png"
+                alt="Jumbotron Image"
+                width="550"
+                height="300"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <main>
+      <div class="contact-container">
+        <div class="illustration">
+          <img
+            src="../../../Advance2/M9/blog/assets/ilustra.png"
+            alt=""
+            width="800px"
+            class="illustration-img"
+          />
+        </div>
+        <div class="contact">
+          <img
+            src="../../../Advance2/M9/blog/assets/profile.png"
+            alt=""
+            class="profile-contact-img"
+          />
+          <h1>Contact Me</h1>
+          <p>Please feel free to contact me</p>
+          <h4>Your information</h4>
+
+          <form action="contact.html" autocomplete="off">
+            <div class="form-container">
+              <!-- kolom input name  -->
+              <div class="input-container">
+                <div class="icon">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="form-input">
+                  <input
+                    type="text"
+                    class="input-item"
+                    name="name"
+                    id="name"
+                    placeholder=" "
+                  />
+                  <label for="name" class="form-label">Name</label>
+                </div>
+              </div>
+
+              <!-- kolom input city -->
+              <div class="input-container">
+                <div class="icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="form-input">
+                  <input
+                    type="text"
+                    class="input-item"
+                    id="city"
+                    name="city"
+                    placeholder=" "
+                  />
+                  <label for="city" class="form-label">City</label>
+                </div>
+              </div>
+
+              <!-- Kolom Input Email -->
+              <div class="input-container">
+                <div class="icon"><i class="far fa-envelope-open"></i></div>
+                <div class="form-input">
+                  <input
+                    class="input-item"
+                    type="text"
+                    name="email"
+                    id="email"
+                    placeholder=" "
+                  />
+                  <label for="email" class="form-label"> Email</label>
+                </div>
+              </div>
+              <!-- Kolom Input Message -->
+              <div class="textarea-container">
+                <div class="icon"><i class="fas fa-comment"></i></div>
+                <div class="form-textarea">
+                  <textarea
+                    class="textarea"
+                    type="text"
+                    name="message"
+                    id="message"
+                    cols="52"
+                    rows="8"
+                    placeholder=" "
+                  >
+                  </textarea>
+                  <label for="message" class="form-label"> Message</label>
+                </div>
+              </div>
+            </div>
+            <input type="submit" value="Submit" class="submit" />
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="main-footer">
+        <h3 class="info-top">Cobee The Junior Programmer</h3>
+        <div class="social-media">
+          <i class="fab fa-instagram-square"></i>
+          <i class="fab fa-twitter-square"></i>
+          <i class="fab fa-facebook-square"></i>
+          <i class="fas fa-envelope"></i>
+        </div>
+        <p class="info-center">
+          Copyright &copy; 2021.Cobee. All right reserved
+        </p>
+      </div>
+    </footer>
+  </body>
+  <script src="script.js"></script>
+</html>

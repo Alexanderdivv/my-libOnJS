@@ -1,18 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100&family=Spartan:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Advance 1 Exam</title>
+
+    <style>
+      body {
+        background-image: url("assets/cover1.jpg");
+        background-size: cover;
+        font-family: "Spartan", sans-serif;
+      }
+
+      h1 {
+        font-size: 50pt;
+        color: rgb(223, 181, 46);
+      }
+
+      h3 {
+        font-size: 40pt;
+      }
+
+      h4 {
+        font-size: 20pt;
+      }
+
+      img.cover {
+        width: 1000px;
+        height: 500px;
+        border: 20px solid rgba(182, 181, 181, 0.281);
+      }
+
+      p.cover {
+        font-size: 30pt;
+        color: rgb(243, 197, 72);
+      }
+      .center {
+        text-align: center;
+        color: rgb(102, 60, 6);
+      }
+      div.menu {
+        background-color: rgba(220, 220, 220, 0.637);
+        margin: 90px;
+        padding: 10px;
+      }
+
+      .item {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        margin: 20px;
+      }
+
+      img.menu {
+        width: 400px;
+        height: 250px;
+        padding: 10px;
+        /* opacity: 0.5; */
+      }
+
+      /* bonus */
+      /* img:hover {
+            opacity: 1;
+        } */
+
+      td,
+      th {
+        background-color: rgba(34, 139, 34, 0.342);
+        border: 2px solid #545257;
+        border-collapse: collapse;
+        margin-bottom: 50px;
+        font-size: 20px;
+        padding: 30px;
+        border-radius: 10px;
+        color: whitesmoke;
+      }
+    </style>
   </head>
   <body>
-    <h1
-      style="
-        display: inline;
-        font-size: 50px;
-        text-align: center;
-        box-shadow: 15px 55px 15px #888888;
-      "
-    >
-      Judul
-    </h1>
+    <section class="center">
+      <h1>
+        BURGERDOOR CAFE <br />
+        MENU
+      </h1>
+      <h5>SINCE 1999</h5>
+      <img class="cover" src="assets/cover2.jpg" alt="" />
+      <p class="center cover">
+        Hungry everyone? <br />
+        Scroll It Now !
+      </p>
+    </section>
+
+    <section class="center">
+      <div class="menu">
+        <h3>Breakfast</h3>
+        <div class="item">
+          <div>
+            <img class="menu" src="assets/breakfast1.jpg" alt="" />
+            <h4>Fruity Pretty Smoothies</h4>
+          </div>
+          <div>
+            <img class="menu" src="assets/breakfast2.jpg" alt="" />
+            <h4>Longlife Salads</h4>
+          </div>
+          <div>
+            <img class="menu" src="assets/breakfast3.jpg" alt="" />
+            <h4>Full Almond Cookies</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="center">
+      <div class="menu">
+        <h3>Burger</h3>
+        <div class="item">
+          <div>
+            <img class="menu" src="assets/burger1.jpg" alt="" />
+            <h4>Bikini Bottom Burger Set</h4>
+          </div>
+          <div>
+            <img class="menu" src="assets/burger2.jpg" alt="" />
+            <h4>Tasty Rice Burger</h4>
+          </div>
+          <div>
+            <img class="menu" src="assets/burger3.jpg" alt="" />
+            <h4>Simple Beef Burger</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="center">
+      <div class="menu">
+        <h3>Coffee</h3>
+        <div class="item">
+          <div>
+            <img class="menu" src="assets/coffee1.jpg" alt="" />
+            <h4>Cappucinno Everyday</h4>
+          </div>
+          <div>
+            <img class="menu" src="assets/coffee2.jpg" alt="" />
+            <h4>Italian Coffee</h4>
+          </div>
+          <div>
+            <img class="menu" src="assets/coffee3.jpg" alt="" />
+            <h4>Chocolate and Marshmallow Coffee</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="center">
+      <div class="menu">
+        <h3>Tea</h3>
+        <div class="item">
+          <div>
+            <img class="menu" src="assets/tea1.jpg" alt="" />
+            <h4>Classic Italian Tea</h4>
+          </div>
+          <div>
+            <img class="menu" src="assets/tea2.jpg" alt="" />
+            <h4>Rosemary Tea</h4>
+          </div>
+          <div>
+            <img class="menu" src="assets/tea3.jpg" alt="" />
+            <h4>Greentea or Rose Tea</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <table class="item">
+        <tr class="center">
+          <th>Opening Hours</th>
+          <th>Location</th>
+          <th>Contacts</th>
+        </tr>
+        <tr class="center">
+          <td rowspan="2">9 am until 10 pm</td>
+          <td rowspan="2">Jalan Bersama No 1, Denpasar</td>
+          <td>Phone: +62878 6233 1621</td>
+        </tr>
+        <tr class="center">
+          <td>Instagram: Burgerdoor</td>
+        </tr>
+      </table>
+    </section>
+
+    <div></div>
   </body>
 </html>

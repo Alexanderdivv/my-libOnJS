@@ -158,7 +158,7 @@ export default class MathFighterScene extends Phaser.Scene {
     if (this.correctAnswer === false && !this.enemyAttack) {
       this.enemy.anims.play("enemy-attack", true);
       this.time.delayedCall(500, () => {
-        this.createSlash(this.enemy.x - 60, this.enemy.y, 2, -600);
+        this.createSlash(this.enemy.x - 60, this.enemy.y, 2, -600, true);
       });
       this.enemyAttack = true;
     }

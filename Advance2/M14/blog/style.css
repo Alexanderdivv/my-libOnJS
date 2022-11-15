@@ -1,0 +1,288 @@
+.main-header {
+  background-color: rgb(38, 50, 88);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: 1ch;
+}
+.header-info {
+  /* float: left; */
+  /* position: absolute; */
+  display: flex;
+  align-items: center;
+  color: orange;
+}
+
+nav.dropdown {
+  /* float: right; */
+  position: absolute;
+  right: 20px;
+}
+
+.dropdown a {
+  text-decoration: none;
+  color: orange;
+  margin: 0 5px;
+}
+
+img#logo {
+  height: 30px;
+  margin: 0 15px;
+}
+
+/* main  */
+
+main {
+  margin-top: 60px;
+}
+
+#jumbotron {
+  width: 100%;
+}
+
+.jumbotron {
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(38, 70, 83);
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
+
+.jumbotron-title {
+  color: rgb(224, 251, 252);
+  font-size: 30px;
+  padding-bottom: 20px;
+  display: inline-block;
+}
+
+.jumbotron-text {
+  color: rgb(224, 251, 252);
+  text-align: left;
+  padding-bottom: 20px;
+  border-bottom: 8px solid rgb(244, 162, 97);
+}
+
+/* kamu bisa tambahkan style lainnya */
+.jumbotron-img {
+  height: 300px;
+}
+
+.mini-text-flex {
+  display: flex;
+  justify-content: flex-start;
+}
+.mini-text {
+  color: rgb(224, 251, 252);
+  text-align: left;
+  margin-right: 5px;
+}
+.fa-hand-point-up {
+  color: aliceblue;
+  font-size: 20px;
+}
+.icon-down {
+  display: none;
+}
+.fa-hand-point-down {
+  color: aliceblue;
+  font-size: 20px;
+}
+button {
+  background-color: rgb(38, 70, 83);
+  border-style: none;
+}
+button:hover {
+  cursor: pointer;
+  transform: translateY(5px);
+}
+
+/* p10 */
+.main-content {
+  display: flex;
+  justify-content: flex-start;
+  margin: 20px 20px;
+}
+
+aside {
+  max-width: 18%;
+  max-height: 800px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 30px gainsboro;
+  padding: 20px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.aside-title {
+  margin-top: 50px;
+  font-size: 25px;
+  border-top: 5px solid rgb(38, 70, 83);
+  border-radius: 5px;
+}
+
+.profile-picture {
+  border-style: solid;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.content {
+  margin-left: 10%;
+  max-width: 65%;
+}
+
+article {
+  max-width: 100%;
+}
+
+.article-title {
+  text-align: center;
+  font-size: 30px;
+  margin: 50px 0 30px;
+}
+
+.maps {
+  padding: 10px;
+}
+
+iframe {
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 40px gainsboro;
+}
+
+footer {
+  background-color: rgb(38, 70, 83);
+}
+
+.center-footer {
+  margin: 0 20px;
+}
+
+.main-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.info-top {
+  text-align: center;
+  width: 100%;
+  padding-top: 5px;
+  color: rgb(224, 251, 252);
+}
+
+.info-center {
+  text-align: center;
+  width: 100%;
+  padding-top: 5px;
+  border-top: 1px solid white;
+  color: rgb(224, 251, 252);
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+}
+
+.fa-instagram-square,
+.fa-twitter-square,
+.fa-facebook-square,
+.fa-envelope {
+  padding: 5px;
+  font-size: 30px;
+  color: white;
+}
+
+/* P11 */
+.toggle {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.btn {
+  background-color: transparent;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+.green {
+  color: green;
+}
+.red {
+  color: red;
+}
+
+.project-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.project {
+  margin: 10px 30px;
+  border-bottom: 10px solid #e76f51;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px gainsboro;
+}
+
+.project-title {
+  color: #e76f51;
+  font-weight: bold;
+}
+
+ul,
+li {
+  position: relative;
+}
+input {
+  width: 70%;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(38, 70, 83);
+  height: 40px;
+  margin: 0;
+  padding: 5px;
+}
+
+.addBtn {
+  width: 30%;
+  padding: 6px;
+  background-color: rgb(38, 70, 83);
+  margin: 0;
+  cursor: pointer;
+  color: snow;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 10px;
+}
+.search-tags-list {
+  list-style: none;
+  margin: 30px 0;
+  padding: 0;
+}
+.search-tags-item {
+  margin: 5px;
+  padding: 10px;
+  background-color: rgb(38, 70, 83);
+  color: snow;
+  text-align: left;
+}
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0 5px;
+  color: tomato;
+  font-family: "Fredoka One", cursive;
+  cursor: pointer;
+  font-size: 20px;
+}

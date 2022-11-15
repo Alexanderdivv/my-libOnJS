@@ -41,7 +41,7 @@
     // Step 3. Initialize Variable
     var score = 0;
     var count = 0;
-    var grid = 16;
+    var grid = 16; // grid is 16px means 1 block is 16px
 
     // Step 4. Create object
     var snake = {
@@ -63,6 +63,7 @@
     document.addEventListener("keydown", function (e) {
       // left arrow key
       if (e.which === 37 && snake.dx === 0) {
+        // 37 is the keycode for the left arrow and snake.dx === 0 is to prevent the snake from going backwards
         snake.dx = -grid;
         snake.dy = 0;
       }

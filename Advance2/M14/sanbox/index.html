@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- create form to enter text -->
+    <input type="text" />
+    <button onclick="validateForm()">Submit</button>
+    <!-- create a div to display the text -->
+    <div id="display"></div>
+  </body>
+  <script>
+    // validate form
+    // create a function to validate form
+    function validateForm() {
+      // get the value of the input
+      var input = document.querySelector("input").value;
+      // check if the input is empty
+      //   if the input is white space, then it is empty
+      //   if (input.trim() === "") {
+      // other way to check if the input is empty
+      //   if (input === "") {
+      // other method to check if the input is empty
+      //   if (!input) {
+      // other method to check if the input is empty
+      //   if (input.length === 0) {
+      // other method to check if the input is empty
+      //   if (!input.trim()) {
+      // other way to check if the input is empty
+      if (!input.trim()) {
+        // display error message
+
+        // if the input is empty, then alert the user
+        alert("Please enter a value");
+      } else {
+        // if the input is not empty, then display the input
+        document.querySelector("#display").innerHTML = input;
+
+        // if the input is not empty, then alert the user
+        alert("Thank you for entering a value");
+      }
+    }
+  </script>
+</html>

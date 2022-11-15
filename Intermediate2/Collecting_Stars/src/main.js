@@ -1,7 +1,7 @@
 import Phaser from "phaser";
 // import HelloWorldScene from './scenes/HelloWorldScene'
-// import CollectingStartScene from "./scenes/CollectingStartsScene";
-import CollectingStarScene from "./scenes/CollectingStartsSceneArka";
+import CollectingStartScene from "./scenes/CollectingStartsScene";
+// import CollectingStarScene from "./scenes/CollectingStartsSceneArka";
 
 const config = {
   type: Phaser.AUTO,
@@ -14,7 +14,7 @@ const config = {
     },
   },
   // scene: [HelloWorldScene]
-  scene: [CollectingStarScene],
+  scene: [CollectingStartScene],
 };
 
 export default new Phaser.Game(config);

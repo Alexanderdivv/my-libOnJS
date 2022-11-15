@@ -1,0 +1,14 @@
+/* transition-property example */
+/* example: loading screen ygy */
+#box {
+  width: 100px;
+  height: 10px;
+  background: #ff0000;
+
+  /* multipple transition */
+  transition: width 10s, height 2s;
+}
+#box:hover {
+  width: 1000px;
+  height: 50px;
+}

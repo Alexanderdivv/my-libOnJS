@@ -1,6 +1,6 @@
 import Phaser from "phaser";
 
-import MathFighterScene from "./scenes/MathFighterScene5";
+import MathFighterScene from "./scenes/MathFighterScene3";
 import GameOverScene from "./scenes/GameOverScene";
 // import MathFighterScene from "./scenes/test";
 

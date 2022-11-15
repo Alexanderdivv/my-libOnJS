@@ -1,0 +1,100 @@
+.main-header {
+  background-color: rgb(38, 50, 88);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: 1ch;
+}
+.header-info {
+  /* float: left; */
+  /* position: absolute; */
+  display: flex;
+  align-items: center;
+  color: orange;
+}
+
+nav.dropdown {
+  /* float: right; */
+  position: absolute;
+  right: 20px;
+}
+
+.dropdown a {
+  text-decoration: none;
+  color: orange;
+  margin: 0 5px;
+}
+
+img#logo {
+  height: 30px;
+  margin: 0 15px;
+}
+
+/* main  */
+
+main {
+  margin-top: 60px;
+}
+
+#jumbotron {
+  width: 100%;
+}
+
+.jumbotron {
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(38, 70, 83);
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
+
+.jumbotron-title {
+  color: rgb(224, 251, 252);
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+
+.jumbotron-text {
+  color: rgb(224, 251, 252);
+  text-align: left;
+  padding-bottom: 20px;
+  border-bottom: 8px solid rgb(244, 162, 97);
+}
+
+/* kamu bisa tambahkan style lainnya */
+.jumbotron-img {
+  height: 300px;
+}
+
+.mini-text-flex {
+  display: flex;
+  justify-content: flex-start;
+}
+.mini-text {
+  color: rgb(224, 251, 252);
+  text-align: left;
+  margin-right: 5px;
+}
+.fa-hand-point-up {
+  color: aliceblue;
+  font-size: 20px;
+}
+.icon-down {
+  display: none;
+}
+.fa-hand-point-down {
+  color: aliceblue;
+  font-size: 20px;
+}
+button {
+  background-color: rgb(38, 70, 83);
+  border-style: none;
+}
+button:hover {
+  cursor: pointer;
+  transform: translateY(5px);
+}

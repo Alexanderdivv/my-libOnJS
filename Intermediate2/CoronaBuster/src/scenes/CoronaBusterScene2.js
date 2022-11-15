@@ -146,7 +146,6 @@ export default class CoronaBusterScene extends Phaser.Scene {
       this.player.setVelocityY(0);
       this.player.anims.play(`turn`);
     }
-    this.sound.play("turn");
   }
 
   createPlayer() {

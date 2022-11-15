@@ -346,12 +346,6 @@ export default class MathFighterScene extends Phaser.Scene {
           this.numberArray.push(value);
         }
       }
-      // join gunanya untuk menyusun angka2 yang ada di array
-      this.number = parseInt(this.numberArray.join(""));
-      this.resultText.setText(String(this.number));
-      const textHalfWidth = this.resultText.width * 0.5;
-      this.resultText.setX(this.gameHalfWidth - textHalfWidth);
-      event.stopPropagation();
     }
     // join gunanya untuk menyusun angka2 yang ada di array
     this.number = parseInt(this.numberArray.join(""));

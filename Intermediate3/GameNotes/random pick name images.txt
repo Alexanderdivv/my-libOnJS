@@ -1,0 +1,9 @@
+//random pick images
+random pick name images in Array.
+1. buat sebuah array yang menampung masing-masing nama gambar sesuai nama di preload()
+contoh: const namaGambar = ["gambar1", "gambar2", "gambar3", "gambar3"]
+2. buat sebuah variabel baru dengan nama randImage yang menampung nilai random dari array
+let randImage = namaGambar[Math.floor(Math.random() * namaGambar.length)];
+3. tampilkan gambar yang dirandom menggunakan image add 
+ex:
+(x, y, 'randImage');

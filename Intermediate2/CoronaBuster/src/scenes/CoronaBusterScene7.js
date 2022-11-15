@@ -362,11 +362,10 @@ export default class CoronaBusterScene extends Phaser.Scene {
     this.sound.play(`handsanitizerSound`);
     if (this.lifeLabel.getLife() >= 3) {
       player.clearTint().setAlpha(2);
+    } else {
+      player.clearTint().setAlpha(2);
+      player.setTint(0xff0000);
     }
-    // else {
-    //   player.clearTint().setAlpha(2);
-    //   player.setTint(0xff0000);
-    // }
   }
 
   spawnHandsanitizer() {
