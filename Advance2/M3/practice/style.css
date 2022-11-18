@@ -1,7 +1,6 @@
-.child {
-  position: fixed;
-  bottom: 0;
+.sticky {
+  position: sticky;
+  border: 10px solid rgb(150, 17, 17);
   right: 0;
-  border: 1px solid #000;
-  width: 200px;
+  top: 50px;
 }
