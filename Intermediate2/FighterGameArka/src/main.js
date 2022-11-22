@@ -1,24 +1,24 @@
 import Phaser from "phaser";
 
-import MathFighterScene from "./scenes/MathFighterScene5";
+import FighterGameScene from "./scenes/FighterGameScene2";
 import GameOverScene from "./scenes/GameOverScene";
-// import MathFighterScene from "./scenes/test";
+import StartScene from "./scenes/StartScene";
 
 const config = {
   type: Phaser.AUTO,
-  width: 480,
-  height: 640,
+  width: 800,
+  height: 600,
   physics: {
     default: "arcade",
     arcade: {
-      gravity: { y: 200 },
+      gravity: { y: 500 },
     },
   },
   scale: {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
-  scene: [MathFighterScene, GameOverScene],
+  scene: [StartScene, FighterGameScene, GameOverScene],
 };
 
 export default new Phaser.Game(config);

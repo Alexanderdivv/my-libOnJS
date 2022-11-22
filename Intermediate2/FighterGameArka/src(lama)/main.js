@@ -1,13 +1,11 @@
 import Phaser from "phaser";
 
-import MathFighterScene from "./scenes/MathFighterScene5";
-import GameOverScene from "./scenes/GameOverScene";
-// import MathFighterScene from "./scenes/test";
+import FighterGameScene from "./scenes/FighterGameScene";
 
 const config = {
   type: Phaser.AUTO,
-  width: 480,
-  height: 640,
+  width: 800,
+  height: 590,
   physics: {
     default: "arcade",
     arcade: {
@@ -18,7 +16,7 @@ const config = {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
-  scene: [MathFighterScene, GameOverScene],
+  scene: [FighterGameScene],
 };
 
 export default new Phaser.Game(config);
