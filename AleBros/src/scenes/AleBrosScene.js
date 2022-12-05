@@ -29,11 +29,15 @@ export default class AleBrosScene extends Phaser.Scene {
     this.cursors = this.input.keyboard.createCursorKeys();
     this.add.image(400, 300, "background").setScale(2);
     this.platform = this.physics.add.staticGroup();
-    this.platform.create(600, 550, "platform").setScale(2).refreshBody();
+    this.platform.create(600, 550, "platform").setScale(3).refreshBody();
     this.player = this.createAnimation();
     this.player2 = this.createAnimation2();
     this.physics.add.collider(this.player, this.platform);
     this.physics.add.collider(this.player2, this.platform);
+
+    // make camera follow player and zoom in
+    this.cameras.main.startFollow(this.player);
+    this.cameras.main.setZoom(1.5);
   }
 
   update() {
@@ -54,9 +58,10 @@ export default class AleBrosScene extends Phaser.Scene {
     // button for player 2
     if (this.cursors.space.isDown) {
       this.player2.anims.play("attack", true);
-    } else {
-      this.player2.anims.play("turn2");
     }
+    // else {
+    //   this.player2.anims.play("turn2");
+    // }
   }
 
   createAnimation() {
@@ -100,7 +105,7 @@ export default class AleBrosScene extends Phaser.Scene {
       key: "attack",
       frames: this.anims.generateFrameNumbers("dude2", { start: 1, end: 3 }),
       frameRate: 10,
-      repeat: 0,
+      repeat: -1,
     });
 
     player.anims.play("turn2");

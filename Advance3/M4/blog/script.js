@@ -90,3 +90,44 @@ function newElement() {
     };
   }
 }
+
+// slider manual
+var slides = document.querySelectorAll(".slide");
+var buttons = document.querySelectorAll(".slider-btn");
+let currentSlide = 1;
+
+// Javascript for image slider manual navigation
+var manualNav = function (manual) {
+  slides.forEach(function (slide) {
+    slide.classList.remove("active");
+
+    buttons.forEach((btn) => {
+      btn.classList.remove("active");
+    });
+  });
+
+  slides[manual].classList.add("active");
+  buttons[manual].classList.add("active");
+};
+
+buttons.forEach(function (btn, i) {
+  btn.addEventListener("click", function () {
+    manualNav(i);
+    currentSlide = i;
+  });
+});
+
+// auto slider
+var repeat = function (activeClass) {
+  let active = document.getElementsByClassName("active");
+  let i = 1;
+
+  var repeater = function () {
+    setTimeout(function () {
+      [...active].forEach(function (activeSlide) {
+        activeSlide.classList.remove("active");
+      });
+      // [...active] means that it will take all the active class and put it into an array. it calls the spread operator
+    });
+  };
+};

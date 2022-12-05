@@ -1,0 +1,86 @@
+.jumbotron {
+  background-image: url("assets/jumbotron (1).jpg");
+  height: 60vh;
+  background-repeat: no-repeat;
+  background-position: 90% 10%;
+}
+
+.main-footer {
+  text-align: center;
+  background-color: black;
+  color: blanchedalmond;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.jumbotron-title {
+  color: blanchedalmond;
+  text-align: center;
+  font-size: 50px;
+}
+
+.jumbotron-text {
+  color: blanchedalmond;
+  background-color: rgba(0, 0, 0, 0);
+  text-align: center;
+}
+
+main {
+  background-color: black;
+  padding-top: 30px;
+}
+
+* {
+  margin: 0;
+}
+
+button {
+  background-color: rgba(219, 85, 75, 0.616);
+  border-radius: 8px;
+  color: white;
+  padding: 8px;
+  border: none;
+  font-size: 20pt;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+button:hover {
+  transform: scale(1.2, 1.2);
+  background-color: rgb(219, 84, 75);
+}
+
+.main-text {
+  color: blanchedalmond;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.hotel-img {
+  border-style: solid;
+  border-radius: 50%;
+  box-shadow: 0 0 20px black;
+  border-color: blanchedalmond;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20pxpx;
+}
+
+.hotels-container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.hotel-text {
+  color: blanchedalmond;
+}
+
+.hotel {
+  margin: 5px;
+}

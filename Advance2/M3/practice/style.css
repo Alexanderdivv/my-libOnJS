@@ -1,6 +1,8 @@
-.sticky {
+.nav {
   position: sticky;
-  border: 10px solid rgb(150, 17, 17);
-  right: 0;
-  top: 50px;
+  top: 0;
+}
+
+main {
+  color: red;
 }

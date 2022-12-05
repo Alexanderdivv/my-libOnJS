@@ -7,6 +7,11 @@ body {
   display: flex;
   align-items: center;
   /* border-radius: 1ch; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
 }
 .header-info {
   /* float: left; */
@@ -36,7 +41,7 @@ img#logo {
 /* main  */
 
 main {
-  margin-top: 60px;
+  margin-top: 50px;
 }
 
 #jumbotron {
@@ -47,7 +52,7 @@ main {
   padding: 20px;
   text-align: center;
   background-color: rgb(38, 70, 83);
-  height: 600px;
+  height: 650px;
 }
 
 .header-flex {
@@ -418,4 +423,74 @@ input {
   position: absolute;
   top: 430px;
   z-index: 3;
+}
+
+/* slider */
+.section-slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.image-slider {
+  position: relative;
+  width: 640px;
+  height: 426px;
+}
+
+.slide {
+  width: 100%;
+  position: absolute;
+
+  /* slider */
+  clip-path: circle(0% at 0 50%);
+}
+.slide img {
+  width: 100%;
+  border-radius: 15px;
+}
+.slide-text {
+  position: absolute;
+  bottom: 50px;
+  left: 30px;
+  background-color: rgba(220, 220, 220, 0.609);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.slide-text h2 {
+  font-size: 30px;
+  padding: 0;
+  margin: 0;
+}
+.slide-text p {
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+}
+.navigation {
+  position: absolute;
+  display: flex;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.slider-btn {
+  background-color: rgb(151, 151, 151);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.slide.active {
+  clip-path: circle(150% at 0 50%);
+  transition: 2s;
+  transition-property: clip-path;
+}
+
+.slider-btn.active {
+  background-color: rgb(38, 70, 83);
 }

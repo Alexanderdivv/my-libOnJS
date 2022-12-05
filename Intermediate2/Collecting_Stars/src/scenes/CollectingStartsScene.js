@@ -102,7 +102,7 @@ export default class CollectingStartScene extends Phaser.Scene {
     //   method untuk menghitung nilai score
     score += 10; //1 bintang bernilai 10
     // menampilkan teks dengan nilai score
-    scoreText.setText(`score: ` + score);
+    scoreText.setText("score: " + score);
 
     // membuat bomb, algoritma no 2, posisi x diambil acak
     var x =
@@ -129,13 +129,13 @@ export default class CollectingStartScene extends Phaser.Scene {
   update() {
     //   jika keyboard left arrow ditekan
     if (cursors.left.isDown) {
-      player.setVelocityX(-160); //kecepatan player kesamping (berjalan)
+      player.setVelocity(-160, 250); //kecepatan player kesamping (berjalan)
       player.anims.play(`left`, true); //animasi berjalan ke kiri
     } else if (cursors.right.isDown) {
-      player.setVelocityX(160);
+      player.setVelocity(160, 250);
       player.anims.play(`right`, true); // memanggil animasi 'turn'
     } else {
-      player.setVelocityX(0); //berhenti
+      player.setVelocityX(0); // agar player jatuh cepat diawal
       player.anims.play(`turn`); //animasi menghadap ke depan
     }
 

@@ -1,0 +1,17 @@
+.joumbo-img {
+  background-image: url("assets/web-development.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 0%;
+  height: 50vh;
+  /* background color transparent */
+  background-color: rgba(242, 242, 242, 0);
+}
+
+nav {
+  display: flex;
+}
+.nav-container {
+  /* center element */
+  margin: 0 auto;
+}
