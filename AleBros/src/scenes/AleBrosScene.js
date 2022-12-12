@@ -54,6 +54,9 @@ export default class AleBrosScene extends Phaser.Scene {
       this.player.setVelocityX(0);
       this.player.anims.play("turn");
     }
+    if (this.cursors.up.isDown && this.player.body.touching.down) {
+      this.player.setVelocityY(-330);
+    }
 
     // button for player 2
     if (this.cursors.space.isDown) {

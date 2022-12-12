@@ -5,7 +5,7 @@ import AleBrosScene from "./scenes/AleBrosScene";
 const config = {
   type: Phaser.AUTO,
   width: 800,
-  height: 600,
+  height: 300,
   physics: {
     default: "arcade",
     arcade: {

@@ -12,7 +12,7 @@ export default class KnightOfWarScene extends Phaser.Scene {
     this.cursor = undefined;
     this.healthbar = undefined;
     this.playerLife = 1;
-    this.enemyLife = 1;
+    this.enemyLife = 0;
     this.platformss = undefined;
     this.enemyAttack = false;
   }
@@ -129,11 +129,30 @@ export default class KnightOfWarScene extends Phaser.Scene {
     this.playerLabel = this.createLabel();
     this.playerLabel.body.setAllowGravity(false);
 
-    this.enemyLabel = this.createLabel();
-    this.enemyLabel.body.setAllowGravity(false);
-    this.enemyLabel.x = 735;
-    this.enemyLabel.y = 43;
-    this.enemyLabel.flipX = true;
+    // // create slash
+    // this.slash = this.physics.add
+    //   .sprite(0, 0 + 20, "ground")
+    //   .setScale(0.2)
+    //   .setCollideWorldBounds(true)
+    //   .setActive(false)
+    //   .setVisible(true);
+    // this.slash.body.setAllowGravity(false);
+
+    // // this.physics.add.overlap(
+    // //   this.slash,
+    // //   this.enemy,
+    // //   this.handleHit,
+    // //   undefined,
+    // //   this
+    // // );
+
+    // this.physics.add.overlap(
+    //   this.slash,
+    //   this.player,
+    //   this.handleHit,
+    //   null,
+    //   this
+    // );
   }
 
   createLabel() {
@@ -193,81 +212,85 @@ export default class KnightOfWarScene extends Phaser.Scene {
       }
     }
 
-    // if player attack skeletin and and hit skeleton
-    if (this.player.anims.currentAnim.key === "attack" && this.enemyAttack) {
-      if (this.player.anims.currentFrame.index === 4) {
-        this.player.anims.play("attack", false);
-        this.enemyLife += 2;
-        this.enemyLabel.anims.play("life" + this.enemyLife, true);
-      }
-    }
-
+    // get the right border
+    const rightBorder = this.physics.world.bounds.width;
+    // get the left border
     // skeleton walking to the player and attacking if close enough
     if (this.enemy.x > this.player.x + 50) {
       this.enemy.setVelocityX(-100);
       this.enemy.flipX = true;
       this.enemy.anims.play("skeletonwalk", true);
-      this.enemyAttack = false;
     } else if (this.enemy.x < this.player.x - 50) {
       this.enemy.setVelocityX(100);
       this.enemy.flipX = false;
       this.enemy.anims.play("skeletonwalk", true);
-      this.enemyAttack = false;
     } else if (this.enemy.y > this.player.y + 50) {
       this.enemy.anims.play("skeletonwalk", true);
-      this.enemyAttack = false;
     } else {
       this.enemy.setVelocityX(0);
-      // play skletonattack anims only once and not repeat
-      this.enemyAttack = true;
       this.enemy.anims.play("skeletonattack", true);
-    }
+      this.enemyAttack = true;
+      // call handleHit function
+      this.handleHit();
 
-    if (this.enemyAttack && this.enemy.anims.currentFrame.index === 17) {
-      this.playerLife += 1;
+      // this.time.delayedCall(1500, () => {
+      //   this.createSlash(
+      //     // border of the frame
+      //     rightBorder - 200,
+      //     this.enemy.y,
+      //     -600
+      //     // this.enemy.flipX,
+      //     // 0xffffff
+      //   );
+      // });
+    }
+    this.enemyAttack = false;
+  }
+
+  // createSlash(x, y, velocity) {
+  //   this.slash
+  //     .setPosition(x, y)
+  //     .setActive(true)
+  //     .setVisible(true)
+  //     .setVelocityX(velocity)
+  //     .setScale(0.5);
+  //   // .setFlipX(flipX)
+  //   // .setTint(color);
+  //   // slash only move in x axis
+  //   this.slash.body.setAllowGravity(false);
+  //   // slash will dissapear when touch the edge
+  //   // this.slash.body.onWorldBounds = true;
+  //   this.slash.body.world.on("worldbounds", (body) => {
+  //     if (body.gameObject === this.slash) {
+  //       this.slash.setActive(false).setVisible(false);
+  //     }
+  //   });
+  // }
+
+  // handleHit(slash, character) {
+  //   // remove slash
+  //   slash.setActive(true).setVisible(true).setPosition(0, 0);
+  //   character.setTint(0x00ff00);
+  //   console.log("test");
+
+  //   if (character === this.player) {
+  //     this.playerLabel.anims.play("life" + this.playerLife, true);
+
+  //     this.playerLife++;
+  //     this.time.delayedCall(500, () => {
+  //       character.clearTint();
+  //     });
+  //   }
+  // }
+
+  handleHit(player, enemy) {
+    // if enemyattack animation is playing, player will lose health
+    if (enemy.anims.currentAnim.key === "skeletonattack" && this.enemyAttack) {
       this.playerLabel.anims.play("life" + this.playerLife, true);
-      this.enemy.anims.play("skeletonattack", false);
-    }
-
-    // if life is 5, game over
-    if (this.playerLife === 5) {
-      // create text game over
-      this.add.text(260, 290, "Game Over", {
-        fontSize: "70px",
-        backgroundColor: "#000",
-        color: "#fff",
-        // size of the text
-        padding: {
-          top: 10,
-          bottom: 10,
-          left: 10,
-          right: 10,
-        },
+      this.playerLife++;
+      this.time.delayedCall(500, () => {
+        player.clearTint();
       });
-      // stop everything
-      this.physics.pause();
-      this.player.setTint(0xff0000);
-      this.player.anims.play("turn");
-      this.scene.pause();
-    } else if (this.enemyLife === 5) {
-      // create text win
-      this.add.text(260, 290, "You Win", {
-        fontSize: "70px",
-        backgroundColor: "#000",
-        color: "#fff",
-        // size of the text
-        padding: {
-          top: 10,
-          bottom: 10,
-          left: 10,
-          right: 10,
-        },
-      });
-      // stop everything
-      this.physics.pause();
-      this.player.anims.play("turn");
-      this.enemy.setTint(0xff0000);
-      this.scene.pause();
     }
   }
 }
