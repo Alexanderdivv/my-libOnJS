@@ -187,6 +187,8 @@ export default class DungeonAdventureScene extends Phaser.Scene {
     }
 
     // enemy attack
+    // kondisi disini berguna untuk membuat life player akan berkurang setelah animasi attack enemy selesai dilakukan.
+    // masalah kita waktu itu ada di frame arthur. jadi walaupun di pembuatan animasi dia start: 3, end: 10, tapi ternyata waktu pengecekan itu tetap dianggap start:0, end:8
     if (
       this.enemy_attack &&
       this.enemy.anims.currentAnim.key == "enemy_attack" &&
