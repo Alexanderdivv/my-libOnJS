@@ -1,18 +1,38 @@
+// import Phaser from "phaser";
+
+// import { GangsterHunter } from "./scenes/GangsterHunter";
+// import StartScene from "./scenes/StartScene";
+// const config = {
+//   type: Phaser.AUTO,
+//   width: 770,
+//   height: 500,
+//   physics: {
+//     default: "arcade",
+//     arcade: {
+//       gravity: { y: 200 },
+//     },
+//   },
+//   scene: [StartScene, GangsterHunter],
+// };
+
+// export default new Phaser.Game(config);
+
+// ARthur
 import Phaser from "phaser";
 
-import { GangsterHunter } from "./scenes/GangsterHunter";
-import StartScene from "./scenes/StartScene";
+import DungeonAdventureScene from "./scenes/DungeonAdventureScene";
+
 const config = {
   type: Phaser.AUTO,
-  width: 770,
-  height: 500,
+  width: 720,
+  height: 480,
   physics: {
     default: "arcade",
     arcade: {
-      gravity: { y: 200 },
+      gravity: { y: 400 },
     },
   },
-  scene: [StartScene, GangsterHunter],
+  scene: [DungeonAdventureScene],
 };
 
 export default new Phaser.Game(config);
