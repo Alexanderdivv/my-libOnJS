@@ -74,7 +74,7 @@ export default class MathFighterScene extends Phaser.Scene {
     this.slash = this.physics.add
       .sprite(240, 60, "slash")
       .setActive(false)
-      .setVisible(false)
+      .setVisible(true)
       .setGravityY(-500)
       .setOffset(0, -10)
       .setDepth(1)

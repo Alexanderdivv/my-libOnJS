@@ -295,8 +295,10 @@ export default class CoronaBusterScene extends Phaser.Scene {
       speed: this.enemySpeed,
       rotation: 0.06,
     };
+    // solve the argument is not assignable to parameter of type 'string' for config
 
     const enemy = this.enemies.get(0, 0, `enemy`, config);
+
     const enemyWidth = enemy.displayWidth;
     const positionX = Phaser.Math.Between(
       enemyWidth,
@@ -373,7 +375,9 @@ export default class CoronaBusterScene extends Phaser.Scene {
       speed: 60,
       rotation: 0,
     };
+
     const handsanitizer = this.handsanitizer.get(0, 0, `handsanitizer`, config);
+
     const handsanitizerWidth = handsanitizer.displayWidth;
     const positionX = Phaser.Math.Between(
       handsanitizerWidth,

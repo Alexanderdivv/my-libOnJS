@@ -7,6 +7,12 @@ export default class FallingObject extends Phaser.Physics.Arcade.Sprite {
     this.speed = config.speed;
     this.rotationVal = config.rotation;
   }
+  // constructor(scene, x, y, texture, configSpeed, configRotation) {
+  //   super(scene, x, y, texture);
+  //   this.scene = scene;
+  //   this.speed = configSpeed;
+  //   this.rotationVal = configRotation;
+  // }
   // memunculkan objek enemy
   spawn(x) {
     // const positionY = Phaser.Math.Between(-50, -70);

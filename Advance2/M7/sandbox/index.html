@@ -2,50 +2,27 @@
 <html lang="en">
   <head>
     <title>Document</title>
+    <style>
+      .dropdown-content {
+        display: none;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      ul {
+        list-style-type: none;
+      }
+    </style>
   </head>
-  <style>
-    .dropdown-content {
-      display: none;
-      position: absolute;
-    }
-    .dropdown:hover .dropdown-content {
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
-    ul {
-      list-style-type: none;
-    }
-    li {
-      text-align: left;
-      padding: 5px;
-      margin: 2px 0;
-      background-color: wheat;
-      max-width: 160px;
-      box-shadow: 3px 3px gainsboro;
-      border-radius: 5px;
-    }
-    li:hover {
-      background-color: white;
-      cursor: pointer;
-    }
-    li:hover a {
-      color: gainsboro;
-    }
-    a {
-      text-decoration: none;
-      color: black;
-    }
-  </style>
   <body>
     <nav>
       <div class="dropdown">
         <a href="">Menu</a>
         <div class="dropdown-content">
           <ul>
-            <li><a href="http://">Submenu 1</a></li>
-            <li><a href="http://">Submenu 2</a></li>
-            <li><a href="http://">Submenu 3</a></li>
+            <li><a href="">Javascript</a></li>
+            <li><a href="">SubMenu2</a></li>
+            <li><a href="">SubMenu3</a></li>
           </ul>
         </div>
       </div>

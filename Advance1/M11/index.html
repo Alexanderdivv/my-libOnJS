@@ -4,9 +4,9 @@
     <title>Document</title>
     <style>
       table,
-      th,
+      tr,
       td,
-      tr {
+      th {
         border: 1px solid black;
         border-collapse: collapse;
       }
@@ -14,25 +14,25 @@
   </head>
   <body>
     <table>
-      <!-- tr pertama atau baris ke-1 -->
       <tr>
-        <th>No</th>
-        <th>Nama</th>
-        <th>Ukuran</th>
+        <th rowspan="2">Nomor</th>
+        <th rowspan="2">Nama</th>
+        <th colspan="2">Warna</th>
       </tr>
-      <!-- tr kedua atau baris ke-2 -->
+      <tr>
+        <td>Main color</td>
+        <td>Secondary color</td>
+      </tr>
       <tr>
         <td>1</td>
-        <td>Neptunus</td>
-        <td rowspan="2">Besar</td>
+        <td>Gitar</td>
+        <td rowspan="2">Merah</td>
+        <td>Putih</td>
       </tr>
       <tr>
         <td>2</td>
-        <td>Bumi</td>
-      </tr>
-      <tr>
-        <td colspan="2">Jumlah</td>
-        <td>2</td>
+        <td>Bantal</td>
+        <td>Putih</td>
       </tr>
     </table>
   </body>

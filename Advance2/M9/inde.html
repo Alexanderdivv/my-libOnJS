@@ -8,6 +8,7 @@
   <body>
     <h2 class="red">Hello Programmer!</h2>
     <p>I am Batman</p>
+    <p>But not Badman</p>
 
     <ul id="lang">
       <li>Satu</li>
@@ -24,15 +25,25 @@
     // document.getElementsByClassName("red")[0].style.color = "blue";
     // document.getElementsByClassName("red")[0].style.fontSize = "50px";
 
+    // var result = (document.getElementsByTagName("p")[0].className = "blue");
+
     // document.getElementsByTagName("p")[0].setAttribute("id", "red");
 
+    // menambangkan element dengan append dan create element
     // var paragraph = document.createElement("h3");
     // paragraph.innerHTML = "ya kali ga kuy";
+    // document.body.appendChild(paragraph);
 
     // document.body.removeChild(paragraph);
 
-    const list = document.getElementById("lang");
-    // remove list
-    list.removeChild(list.children[2]);
+    // remove child untuk menghapus child. tiap child diurutkan seperti array
+    // const list = document.getElementById("lang");
+    // // remove list
+    // list.removeChild(list.children[2]);
+
+    // method remove untuk menghapus element
+    // let remove = document.getElementsByClassName("red")[0];
+    // remove.remove();
+    // document.body.removeChild(remove);
   </script>
 </html>
