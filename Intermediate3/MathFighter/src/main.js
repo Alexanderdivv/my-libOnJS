@@ -1,9 +1,10 @@
 import Phaser from "phaser";
 
-import MathFighterScene from "./scenes/MathFighterScene5";
+// import MathFighterScene from "./scenes/MathFighterScene5";
 // import GameOverScene from "./scenes/GameOverScene";
 // import MathFighterScene from "./scenes/test";
 // import MathFighterScene from "./scenes/MathWarScene";
+import MathFighterScene from "./scenes/MathFighterTnA";
 const config = {
   type: Phaser.AUTO,
   width: 480,
