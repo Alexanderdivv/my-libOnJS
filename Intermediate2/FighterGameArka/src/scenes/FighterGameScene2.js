@@ -38,6 +38,8 @@ export default class FighterGameScene2 extends Phaser.Scene {
     });
   }
   create() {
+    // create background color
+
     this.add.image(400, 300, "background").setScale(0.6);
     this.platform = this.physics.add.staticGroup();
     // make platform wider than the default

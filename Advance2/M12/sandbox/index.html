@@ -5,11 +5,15 @@
     <style></style>
   </head>
   <body>
-    <button onclick="showText()">Submit</button>
+    <button class="button">Event Handler</button>
   </body>
   <script>
-    function showText() {
-      alert("Halo gais welkambek");
-    }
+    let button = document.querySelector(".button");
+    button.addEventListener("click", () => {
+      console.log("First Hello World");
+    });
+    button.addEventListener("click", () => {
+      console.log("Second Hello World");
+    });
   </script>
 </html>

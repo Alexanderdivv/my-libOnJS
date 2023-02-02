@@ -11,7 +11,7 @@ export default class AleBrosScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image("background", "images/sky.png");
+    // this.load.image("background", "images/sky.png");
     this.load.image("platform", "images/platform.png");
     this.load.spritesheet("dude", "images/player_tilesheet.png", {
       frameWidth: 80,
