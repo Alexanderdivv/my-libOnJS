@@ -20,19 +20,25 @@
 // ARthur
 import Phaser from "phaser";
 
-import DungeonAdventureScene from "./scenes/DungeonAdventureScene";
+// import DungeonAdventureScene from "./scenes/DungeonAdventureScene";
+// import BunnyJumpScene from "./scenes/BunnyJumpScene4";
+import GameScene from "./scenes/GameScene";
 
 const config = {
   type: Phaser.AUTO,
-  width: 720,
-  height: 480,
+  // dungeon
+  // width: 720,
+  // height: 480,
+  // bunny
+  width: 480,
+  height: 640,
   physics: {
     default: "arcade",
     arcade: {
       gravity: { y: 400 },
     },
   },
-  scene: [DungeonAdventureScene],
+  scene: [GameScene],
 };
 
 export default new Phaser.Game(config);

@@ -12,6 +12,10 @@ export default class BunnyJumpScene extends Phaser.Scene {
   constructor() {
     super("bunny-jump-scene");
   }
+  init() {
+    this.doubleJump = false;
+    this.platforms2 = undefined;
+  }
   preload() {
     this.load.image("background", "images/bg_layer1.png");
     this.load.image("platform", "images/ground_grass.png");
@@ -33,19 +37,42 @@ export default class BunnyJumpScene extends Phaser.Scene {
     // this.add.image(240, 320, "platform");
     this.platforms = this.physics.add.staticGroup();
 
-    // menggandakan platform
-    for (let i = 0; i < 6; i++) {
-      // x bernilai random dari 80-400
-      const x = Phaser.Math.Between(80, 400);
-      const y = 150 * i; //platform akan berjarak 150px
+    // // make the other platforms, that cause the player double jump
+    this.platforms2 = this.physics.add.staticGroup();
 
-      // membuat platform
-      const platformChild = this.platforms.create(x, y, "platform");
+    // random the platform to show and make it difference
+    for (let i = 0; i < 6; i++) {
+      let random = Phaser.Math.Between(1, 2);
+      const x = Phaser.Math.Between(80, 400);
+      const y = 170 * i; //platform akan berjarak 150px
+      let platformChild = undefined;
+      if (random == 1) {
+        platformChild = this.platforms.create(x, y, "platform");
+      } else {
+        platformChild = this.platforms2
+          .create(x, y, "platform")
+          .setTint(0xff1245);
+      }
+
       platformChild.setScale(0.5); //mengecilkan platform
       platformChild.refreshBody(); //refresh platform
       const body = platformChild.body;
       body.updateFromGameObject();
     }
+
+    // // menggandakan platform
+    // for (let i = 0; i < 6; i++) {
+    //   // x bernilai random dari 80-400
+    //   const x = Phaser.Math.Between(80, 400);
+    //   const y = 170 * i; //platform akan berjarak 150px
+
+    //   const platformChild = this.platforms.create(x, y, "platform");
+    //   platformChild.setScale(0.5); //mengecilkan platform
+    //   platformChild.refreshBody(); //refresh platform
+    //   const body = platformChild.body;
+    //   body.updateFromGameObject();
+
+    // }
 
     // membuat player
     this.player = this.physics.add
@@ -54,6 +81,7 @@ export default class BunnyJumpScene extends Phaser.Scene {
 
     //   membuat collision/tabrakan antara player dengan platform
     this.physics.add.collider(this.player, this.platforms);
+    this.physics.add.collider(this.player, this.platforms2);
 
     // membuat player/bunny agar hanya collide pada paltform yang dipijak
     // mematikan collision player pada bagian atas, kiri dan kanan
@@ -69,6 +97,8 @@ export default class BunnyJumpScene extends Phaser.Scene {
     });
     // platforms berbenturan dengan carrots
     this.physics.add.collider(this.platforms, this.carrots);
+    this.physics.add.collider(this.platforms2, this.carrots);
+
     this.physics.add.overlap(
       this.player,
       this.carrots,
@@ -89,16 +119,24 @@ export default class BunnyJumpScene extends Phaser.Scene {
   }
 
   update() {
-    //   variabel lokal untuk memastikan player menyentuh bawah
     const touchingDown = this.player.body.touching.down;
 
-    // kondisi jika player menyentuh bawah
-    if (touchingDown) {
-      // maka player akan meloncat dengan percepatan -300
-      this.player.setVelocityY(-300); //-300 karena keatas dan perubahan animasi menjadi melompat
-      this.player.setTexture("bunny_jump"); //mengubah texture menjadi melompat
+    // if player touch the platform 2
+    // if player stand on the platform 2
+    if (this.physics.overlap(this.player, this.platforms2)) {
+      this.player.setVelocityY(-800);
+      this.player.setTexture("bunny_jump");
+    } else if (touchingDown) {
+      this.player.setVelocityY(-400);
+      this.player.setTexture("bunny_jump");
     }
-
+    // //   variabel lokal untuk memastikan player menyentuh bawah
+    // const touchingDown = this.player.body.touching.down;
+    // // check the player is touch the platform 2 or platform 1
+    // if (touchingDown) {
+    //   this.player.setVelocityY(-800);
+    //   this.player.setTexture("bunny_jump");
+    // }
     // mengatur pergerakan player/bunny
     if (this.cursors.left.isDown || this.nav_left) {
       this.player.setVelocityX(-200);
@@ -119,6 +157,21 @@ export default class BunnyJumpScene extends Phaser.Scene {
     // melakukan iterasi pada semua child di platform
 
     this.platforms.children.iterate((child) => {
+      const platformChild = child;
+      const scrollY = this.cameras.main.scrollY;
+      // @ts-ignore
+      if (platformChild.y >= scrollY + 970) {
+        // @ts-ignore
+        // platformChild.y = scrollY - Phaser.Math.Between(75, 90);
+        platformChild.y = scrollY + Phaser.Math.Between(5, 15);
+        // @ts-ignore
+        platformChild.body.updateFromGameObject();
+
+        // panggil method carrot
+        this.addCarrotAbove(platformChild);
+      }
+    });
+    this.platforms2.children.iterate((child) => {
       const platformChild = child;
       const scrollY = this.cameras.main.scrollY;
       // @ts-ignore
@@ -249,3 +302,6 @@ export default class BunnyJumpScene extends Phaser.Scene {
     );
   }
 }
+
+// item yg buat double jump
+// platform yg buat mati

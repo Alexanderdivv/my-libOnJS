@@ -184,30 +184,31 @@ export default class DungeonAdventureScene extends Phaser.Scene {
         this.enemy.setVisible(false);
         this.enemy.setActive(false);
       });
+      console.log("hitted");
     }
 
     // enemy attack
     // kondisi disini berguna untuk membuat life player akan berkurang setelah animasi attack enemy selesai dilakukan.
     // masalah kita waktu itu ada di frame arthur. jadi walaupun di pembuatan animasi dia start: 3, end: 10, tapi ternyata waktu pengecekan itu tetap dianggap start:0, end:8
     if (
-      this.enemy_attack &&
       this.enemy.anims.currentAnim.key == "enemy_attack" &&
       this.enemy.anims.currentFrame.index === 8
     ) {
+      console.log("test");
       this.player.setTint(0xff2b2b);
-      this.time.delayedCall(200, () => {
-        this.playerLife--;
-        if (this.playerLife == 2) {
-          this.life3.setVisible(false);
-        }
-        if (this.playerLife == 1) {
-          this.life2.setVisible(false);
-        }
-        if (this.playerLife == 0) {
-          this.life1.setVisible(false);
-        }
-        this.player.clearTint();
-      });
+      // this.time.delayedCall(200, () => {
+      this.playerLife--;
+      if (this.playerLife == 2) {
+        this.life3.setVisible(false);
+      }
+      if (this.playerLife == 1) {
+        this.life2.setVisible(false);
+      }
+      if (this.playerLife == 0) {
+        this.life1.setVisible(false);
+      }
+      this.player.clearTint();
+      // });
       this.enemy.anims.play("enemy_attack", false);
     }
   }

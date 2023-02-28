@@ -142,6 +142,7 @@ aside {
 .content {
   margin-left: 10%;
   max-width: 65%;
+  text-align: center;
 }
 
 article {

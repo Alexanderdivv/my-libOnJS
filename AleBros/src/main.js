@@ -1,7 +1,7 @@
 import Phaser from "phaser";
 
-// import AleBrosScene from "./scenes/AleBrosScene";
-import AleBrosScene from "./scenes/RunPlatform";
+import AleBrosScene from "./scenes/AleBrosScene";
+// import AleBrosScene from "./scenes/RunPlatform";
 
 const config = {
   type: Phaser.AUTO,

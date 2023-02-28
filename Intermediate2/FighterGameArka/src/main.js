@@ -3,7 +3,8 @@ import Phaser from "phaser";
 // import FighterGameScene from "./scenes/FighterGameScene2";
 // import GameOverScene from "./scenes/GameOverScene";
 // import StartScene from "./scenes/StartScene";
-import MysteriousFighterScene from "./scenes/MysteriousFighterScene";
+// import MysteriousFighterScene from "./scenes/MysteriousFighterScene (1)";
+import ThinkFastScene from "./scenes/ThinkFastScene";
 
 const config = {
   type: Phaser.AUTO,
@@ -22,7 +23,8 @@ const config = {
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
   // scene: [StartScene, FighterGameScene, GameOverScene],
-  scene: [MysteriousFighterScene],
+  // scene: [MysteriousFighterScene],
+  scene: [ThinkFastScene],
 };
 
 export default new Phaser.Game(config);

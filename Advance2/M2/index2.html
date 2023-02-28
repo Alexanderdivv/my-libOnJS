@@ -23,19 +23,33 @@
         padding-top: 0cm;
         margin-right: 0fr;
       }
+      #toTop {
+        background-color: #f2ff5f;
+        font-size: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+      }
     </style>
   </head>
   <body>
-    <header>
+    <header id="top">
       <nav>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
         <a href="">Blog</a>
       </nav>
-      <h1>Inni judul</h1>
+      <h1>Ini judul</h1>
     </header>
 
     <main id="about">
+      <h1>About</h1>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum
         laudantium reprehenderit, maxime sapiente facilis vero totam blanditiis
@@ -61,11 +75,12 @@
         laudantium sunt excepturi officia doloribus, saepe a ducimus quasi
         voluptate incidunt!
       </p>
+      <div id="toTop"><a href="#top">Top</a></div>
     </main>
 
-    <footer>
+    <footer id="contact">
       <div class="center-footer">
-        <h3 id="judul1"></h3>
+        <h3 id="judul1">Contact</h3>
       </div>
     </footer>
   </body>
