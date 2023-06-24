@@ -4,7 +4,33 @@
     <title>Document</title>
   </head>
   <body>
-    <label for="file">File</label>
-    <input type="file" name="file" multiple />
+    <form action="">
+      <label for="file">File</label>
+      <!-- input radio -->
+      <input type="radio" name="file" value="file2" />
+      <input type="text" disabled value="test" />
+      <input
+        type="date"
+        name="date"
+        id="date"
+        min="2022-03-01"
+        max="2023-12-31"
+      />
+    </form>
   </body>
+  <script>
+    // show the value of the checkbox
+    const file = document.querySelector('input[name="file"]');
+    file.addEventListener("change", function () {
+      console.log(file.value);
+    });
+
+    // show the radio button value
+    // const radios = document.querySelectorAll('input[type="radio"]');
+    // radios.forEach((radio) => {
+    //   radio.addEventListener("change", (e) => {
+    //     console.log(e.target.value);
+    //   });
+    // });
+  </script>
 </html>

@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Document</title>
-  </head>
-  <body>
-    <p id="programmer">I am Programmer</p>
-  </body>
-  <script>
-    var result = document.getElementsByTagName("p")[0].innerHTML;
-    console.log(result);
-  </script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>HTML DOM</h1>
+  <p class="parag">Paragraf 1</p>
+  <p class="parag">Paragraf 2</p>
+  <p class="parag">Paragraf 3</p>
+  <p id="parag1">Paragraf Ber-id</p>
+</body>
+<script>
+
+var hapus = document.getElementById("parag1")
+document.body.removeChild(hapus)
+</script>
 </html>

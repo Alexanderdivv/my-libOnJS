@@ -1,16 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <title>Document</title>
   </head>
   <body>
-    <div class="container">
-      <div class="item">
-        <img src="elon-musk.jpg" alt="Elon Musk" />
-        <h5 class="name">Elon Musk</h5>
-        <p class="company">CEO of Tesla</p>
-        <a href="" class="close"></a>
-      </div>
-    </div>
+    <p>
+      <span id="span-01">Here is span-01</span>
+      Some text at the top level
+      <span id="span-02">Here is span-02</span>
+    </p>
+
+    <!-- example of parentNode and parentElement -->
+    <template id="t"><div>inside Div</div></template>
   </body>
+  <script>
+    let nextElement = document.getElementById("span-01").nextElementSibling;
+    let nextSibling = document.getElementById("span-01").nextSibling;
+
+    console.log("nextElementSibling", nextElement);
+    console.log("nextSibling", nextSibling);
+
+    // example of parentNode and parentElement
+    let template = document.getElementById("t");
+    let div = template.content.firstChild; // firstChild is the div
+    console.log("div", div);
+    console.log("parentNode", div.parentNode);
+    console.log("parentElement", div.parentElement);
+  </script>
 </html>

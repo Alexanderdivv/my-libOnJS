@@ -5,12 +5,38 @@
     <style>
       .dropdown-content {
         display: none;
+        /* position: absolute; */
       }
       .dropdown:hover .dropdown-content {
-        display: block;
+        display: flex;
       }
       ul {
         list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        text-align: left;
+        padding: 5px;
+        margin: 2px 0px;
+        background-color: wheat;
+        min-width: 160px;
+        box-shadow: 3px 3px 5px gainsboro;
+        border-radius: 5px;
+      }
+      li:hover {
+        background-color: white;
+        cursor: pointer;
+      }
+
+      li:hover a {
+        color: gainsboro;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
       }
     </style>
   </head>

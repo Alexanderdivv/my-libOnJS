@@ -1,9 +1,8 @@
 .main-header {
-  background-color: rgb(38, 50, 88);
+  background-color: rgb(38, 70, 83);
   height: 50px;
   display: flex;
   align-items: center;
-  border-radius: 1ch;
 }
 .header-info {
   /* float: left; */

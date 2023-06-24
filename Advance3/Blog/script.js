@@ -223,7 +223,7 @@ if (splash) {
   document.addEventListener("DOMContentLoaded", function (event) {
     setTimeout(function () {
       splash.style.display = "none";
-    }, 3000);
+    }, 4000);
   });
 }
 

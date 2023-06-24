@@ -2,41 +2,86 @@
 <html lang="en">
   <head>
     <title>Document</title>
-    <!-- tag style untuk css -->
     <style>
-      /* selector */
-      * {
-        font-family: "courier new";
+      body {
+        font-family: "Roboto", sans-serif;
       }
-      h1 {
-        color: red;
+      table,
+      tr,
+      td,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
       }
-      h1.judul1 {
-        font-size: 50px;
+
+      table {
+        width: 100%;
+        text-align: center;
       }
-      .tema1 {
-        background-color: yellow;
+
+      td {
+        height: 70px;
+        vertical-align: top;
+      }
+
+      tr:hover {
+        background-color: aquamarine;
+        color: rebeccapurple;
+      }
+
+      tr:nth-child(even) {
+        background-color: bisque;
       }
     </style>
-  </head>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:wght@500&display=swap&effect=anaglyph"
+      rel="stylesheet"
+    />
+  </head>
   <body>
-    <h1 class="judul1 tema1">Judul 1</h1>
-    <h1 class="judul1">Judul 2</h1>
-    <h1 class="judul1">Judul 3</h1>
-    <h1>Judul 4</h1>
-    <h1>Judul 5</h1>
-    <h1>Judul 6</h1>
-    <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi quam
-      maiores accusantium nihil quibusdam. Perferendis officia laborum pariatur
-      natus iste autem, assumenda odio quas nesciunt, ut accusantium suscipit
-      temporibus numquam!
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam fugit
-      quam placeat architecto, minima, ut quasi enim ratione quia adipisci
-      maiores, odit magnam facilis porro quibusdam eum labore! Dolores, at.
-    </p>
+    <h1 class="font-effect-anaglyph">Table barang impian</h1>
+    <table>
+      <tr>
+        <th rowspan="2">No</th>
+        <th rowspan="2">Item</th>
+        <th colspan="2">Color</th>
+      </tr>
+
+      <tr>
+        <th>Main Color</th>
+        <th>Secondary Color</th>
+      </tr>
+
+      <tr>
+        <td>1</td>
+        <td>Gaming Keyboard</td>
+        <td>Black</td>
+        <td>White</td>
+      </tr>
+
+      <tr>
+        <td>2</td>
+        <td>Gaming Chair</td>
+        <td>Brown</td>
+        <td>Orange</td>
+      </tr>
+
+      <tr>
+        <td>3</td>
+        <td>Gaming Mouse</td>
+        <td>Brown</td>
+        <td>Orange</td>
+      </tr>
+
+      <tr>
+        <td>4</td>
+        <td>Gaming Speaker</td>
+        <td>Brown</td>
+        <td>Orange</td>
+      </tr>
+    </table>
   </body>
 </html>

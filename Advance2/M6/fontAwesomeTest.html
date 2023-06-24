@@ -7,18 +7,23 @@
       src="https://kit.fontawesome.com/1ba09beaeb.js"
       crossorigin="anonymous"
     ></script>
-
     <style>
-      .horizontal {
-        width: 100px;
-        background-image: radial-gradient(circle, red, yellow, green, blue);
+      .container {
+        border: 1px solid black;
+        width: 300px;
+        background-image: radial-gradient(
+          circle,
+          rgba(255, 0, 0, 0.223) 50%,
+          blue,
+          yellow
+        );
       }
     </style>
   </head>
   <body>
-    <i class="fa-solid fa-basketball"></i>
-    <div class="horizontal">
-      <h3>Horizontal Linear Gradient</h3>
+    <div class="container">
+      <h1>Gradient</h1>
     </div>
+    <button class="btn"><i class="fa fa-home"></i></button>
   </body>
 </html>

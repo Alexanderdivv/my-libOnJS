@@ -4,6 +4,10 @@
     margin: 2px;
   }
 }
+html {
+  /* smooth scroll */
+  scroll-behavior: smooth;
+}
 body {
   background-image: url("../M3/assets/bg.jpg");
   background-size: cover;
