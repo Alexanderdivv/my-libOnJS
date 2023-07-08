@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body>
-    <form>
-      <label for="firstname">Firstname</label><br />
-      <input type="text" id="firstname" placeholder="ex. Alex" />
-      <br />
-      <label for="address">Address</label><br />
-      <textarea name="address" id="address" cols="30" rows="20"></textarea>
+    <form action="">
+      <pre>
+      <label for="kolomKelas">Klas</label>
+      <input type="text" name="kelas" id="kolomKelas" />
+      
+
+      <label for="alamat">Alamat</label>
+      <textarea name="alamat" id="alamat" cols="20" rows="10"></textarea>
+
+      <label for="negara">Negara</label>
+      <select name="negara" id="negara">
+        <option value="indonesia">Indonesia</option>
+        <option value="korea">Korea</option>
+      </select>
+    </pre>
     </form>
   </body>
+  <script>
+    const kolomKelas = document.getElementById("kolomKelas");
+    kolomKelas.addEventListener("keyup", function () {
+      console.log(kolomKelas);
+    });
+    console.log(kolomKelas);
+  </script>
 </html>
