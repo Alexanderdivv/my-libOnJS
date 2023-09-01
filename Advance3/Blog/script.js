@@ -154,6 +154,7 @@ var repeat = function () {
     //but it has different condition to run, which is every 5s
     setTimeout(function () {
       [...active].forEach(function (activeSlide) {
+        // ... active means to spread the active array. thats called spread operator
         activeSlide.classList.remove("active");
       });
 

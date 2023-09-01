@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>HTML DOM</h1>
-  <p class="parag">Paragraf 1</p>
-  <p class="parag">Paragraf 2</p>
-  <p class="parag">Paragraf 3</p>
-  <p id="parag1">Paragraf Ber-id</p>
-</body>
-<script>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <p class="apps" style="color: red">
+      1 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id perferendis
+      veniam corporis quos, provident modi laudantium eos delectus ut. Eos ea
+      laborum iure, non aspernatur beatae odit provident eius soluta!
+    </p>
+    <p class="apps" id="" type="" onclick="">
+      2 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum,
+      voluptatem, quos possimus ipsa quas ullam accusantium assumenda blanditiis
+      eveniet commodi explicabo voluptas maiores iste praesentium fuga suscipit
+      voluptatibus tenetur repellendus!
+    </p>
+    <p class="apps">
+      3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius amet
+      ducimus tempore, dolorum in quaerat obcaecati doloremque ullam blanditiis
+      rem odio ipsum pariatur quia! Incidunt eaque vitae autem minima! Fuga.
+    </p>
+  </body>
+  <script>
+    var newItem = document.createElement("h1");
+    newItem.innerHTML = "Belajar DOM";
 
-var hapus = document.getElementById("parag1")
-document.body.removeChild(hapus)
-</script>
+    document.body.appendChild(newItem);
+
+    var par = document.getElementsByClassName("apps")[0];
+
+    document.body.removeChild(par);
+  </script>
 </html>
